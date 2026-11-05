@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Udruga SRETNO! | XXXV. Skok preko kože – RGNF Zagreb</title>
+  <meta name="description" content="Službena stranica Udruge SRETNO! Rudarsko-geološko-naftnog fakulteta Sveučilišta u Zagrebu. Čuvari 85 godina duge tradicije i ceremonijala Skok preko kože.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS VARIJABLE I GLOBALNI TEMATSKI STILOVI
+       ========================================================================== */
+    :root {
+      --bg-main: #090c0a;
+      --bg-surface: #111613;
+      --bg-surface-elevated: #18201b;
+      --bg-glass: rgba(12, 16, 13, 0.92);
+      
+      --gold: #d4af37;
+      --gold-light: #f7e7a9;
+      --gold-dark: #997819;
+      --gold-gradient: linear-gradient(135deg, #fae7a5 0%, #d4af37 50%, #947214 100%);
+      
+      --green-primary: #1e824c;
+      --green-light: #2ecc71;
+      --green-dark: #145a32;
+      --green-glow: rgba(46, 204, 113, 0.35);
+      
+      --text-white: #ffffff;
+      --text-muted: #c5cec8;
+      --text-dark: #7e8b83;
+      
+      --border-gold: rgba(212, 175, 55, 0.35);
+      --border-green: rgba(46, 204, 113, 0.4);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+
+      --shadow-gold: 0 0 25px rgba(212, 175, 55, 0.25);
+      --shadow-green: 0 0 30px rgba(30, 130, 76, 0.3);
+      
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-white);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(30, 130, 76, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 60%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(30, 130, 76, 0.1) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    /* TIPOGRAFIJA */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .gold-title {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 12px rgba(212, 175, 55, 0.25);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+
+    .section-header .tagline {
+      color: var(--green-light);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    .section-header .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 0 auto;
+    }
+
+    .section-header .divider::before,
+    .section-header .divider::after {
+      content: '';
+      height: 1px;
+      width: 70px;
+      background: var(--gold);
+    }
+
+    .section-header .divider-icon {
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      font-weight: 300;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--gold-light);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    section {
+      padding: 5.5rem 0;
+      position: relative;
+    }
+
+    /* GUMBI */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #0b0e0c;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.55);
+      color: #000;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--green-light);
+      color: var(--green-light);
+    }
+
+    .btn-outline:hover {
+      background: rgba(46, 204, 113, 0.15);
+      border-color: var(--green-light);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px var(--green-glow);
+    }
+
+    /* ==========================================================================
+       NAVIGACIJA & LOGOTIPI U KUTOVIMA
+       ========================================================================== */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-gold);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 85px;
+      padding: 0 2rem;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    /* LIJEVI KUT: LOGO UDRUGE SRETNO */
+    .nav-logo-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .logo-img-sretno {
+      height: 58px;
+      width: 58px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(46, 204, 113, 0.5));
+      transition: var(--transition);
+      border-radius: 50%;
+    }
+
+    .logo-img-sretno:hover {
+      transform: scale(1.08) rotate(-5deg);
+    }
+
+    .logo-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-main-text {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1.1;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub-text {
+      font-size: 0.65rem;
+      color: var(--green-light);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+
+    /* DESNI KUT: LOGO RGNF-A */
+    .nav-logo-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .logo-img-rgnf {
+      height: 52px;
+      width: 52px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25));
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 3px;
+      transition: var(--transition);
+    }
+
+    .logo-img-rgnf:hover {
+      transform: scale(1.08);
+      filter: drop-shadow(0 0 12px var(--gold));
+    }
+
+    .rgnf-meta {
+      text-align: right;
+    }
+
+    .rgnf-title {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .rgnf-sub {
+      font-size: 0.62rem;
+      color: var(--text-dark);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--gold);
+      font-size: 1.8rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    /* ==========================================================================
+       HERO SEKCIJA
+       ========================================================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 130px 0 70px 0;
+      background: 
+        linear-gradient(180deg, rgba(9, 12, 10, 0.82) 0%, rgba(9, 12, 10, 0.95) 100%),
+        radial-gradient(ellipse at center, rgba(30, 130, 76, 0.28) 0%, rgba(9, 12, 10, 0.98) 80%);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .badge-tradition {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 16px;
+      background: rgba(30, 130, 76, 0.25);
+      border: 1px solid var(--green-light);
+      border-radius: 50px;
+      color: var(--green-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge-tradition span.pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--green-light);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--green-light);
+      animation: pulseAnim 2s infinite;
+    }
+
+    @keyframes pulseAnim {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.3); }
+      100% { opacity: 0.4; transform: scale(0.9); }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-white);
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+      border-left: 3px solid var(--gold);
+      padding-left: 1rem;
+    }
+
+    .hero p.desc {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 2.2rem;
+      text-align: center;
+      box-shadow: var(--shadow-gold), 0 20px 40px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    .hero-card-img-wrapper {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(30,130,76,0.3) 0%, transparent 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 25px rgba(46, 204, 113, 0.4);
+    }
+
+    .hero-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
+    }
+
+    .hero-card h3 {
+      font-size: 1.6rem;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card p {
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .stat-box .number {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--green-light);
+      display: block;
+    }
+
+    .stat-box .label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ==========================================================================
+       TRADITION STRIP
+       ========================================================================== */
+    .tradition-strip {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 2.5rem 0;
+    }
+
+    .strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .strip-item h4 {
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 0.2rem;
+    }
+
+    .strip-item p {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0;
+      color: var(--text-white);
+    }
+
+    /* ==========================================================================
+       SEKCIJA: O NAMA
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--bg-surface);
+      border-left: 4px solid var(--green-light);
+      border-top: 1px solid var(--border-subtle);
+      border-right: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 2rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1.6rem;
+      transition: var(--transition);
+    }
+
+    .about-card:hover {
+      transform: translateX(8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      border-color: var(--gold);
+    }
+
+    .about-card h3 {
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .officers-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 2.2rem;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .officers-card h3 {
+      font-size: 1.4rem;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .officers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .officer-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 6px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .officer-role {
+      font-weight: 600;
+      color: var(--text-white);
+      font-size: 0.88rem;
+    }
+
+    .officer-name {
+      color: var(--green-light);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .greeting-box {
+      margin-top: 2rem;
+      background: rgba(30, 130, 76, 0.18);
+      border: 1px dashed var(--green-light);
+      padding: 1.2rem;
+      text-align: center;
+      border-radius: 6px;
+    }
+
+    .greeting-box strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-family: var(--font-display);
+      letter-spacing: 2px;
+    }
+
+    /* ==========================================================================
+       SEKCIJA: SKOK PREKO KOŽE (skok.jpeg)
+       ========================================================================== */
+    .skok-feature {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3.5rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .skok-photo-container {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-green), 0 20px 40px rgba(0, 0, 0, 0.8);
+      border: 2px solid var(--border-gold);
+      background: #000;
+    }
+
+    .skok-photo-container img {
+      width: 100%;
+      height: 100%;
+      max-height: 640px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .skok-photo-container:hover img {
+      transform: scale(1.03);
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.2rem 1.5rem;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.95) 100%);
+      font-size: 0.88rem;
+      color: var(--gold-light);
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .ceremony-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .step-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-top: 3px solid var(--green-primary);
+      border-radius: 8px;
+      padding: 1.8rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .step-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .step-num {
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      background: var(--gold-gradient);
+      color: #000;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .step-card h4 {
+      font-size: 1.15rem;
+      color: var(--gold);
+      margin-top: 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+
+    /* POKROVITELJSTVA */
+    .patronage-box {
+      margin-top: 4rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .patronage-box h3 {
+      font-size: 1.6rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .patrons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .patron-card {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      transition: var(--transition);
+    }
+
+    .patron-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .patron-title {
+      font-size: 0.8rem;
+      color: var(--green-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+
+    .patron-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      font-family: var(--font-display);
+      margin-bottom: 0.5rem;
+    }
+
+    .patron-desc {
+      font-size: 0.82rem;
+      color: var(--text-dark);
+      margin: 0;
+    }
+
+    /* PROTOKOL I OSLOVLJAVANJE */
+    .protocol-box {
+      margin-top: 3.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 2rem;
+    }
+
+    .protocol-box h4 {
+      color: var(--gold);
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+
+    .quote-box {
+      background: rgba(0, 0, 0, 0.5);
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    .quote-box strong {
+      color: var(--gold-light);
+      font-style: normal;
+    }
+
+    /* ==========================================================================
+       SEKCIJA: SVETA BARBARA (sv-barbara.jpg)
+       ========================================================================== */
+    .barbara-wrapper {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .barbara-frame {
+      background: linear-gradient(145deg, #1b241e, #101512);
+      border: 3px solid var(--gold);
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.3), 0 20px 40px rgba(0,0,0,0.8);
+      position: relative;
+    }
+
+    .barbara-frame img {
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      object-fit: cover;
+      display: block;
+      border-radius: 6px;
+    }
+
+    .symbols-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 1.5rem 0;
+    }
+
+    .pill {
+      background: rgba(30, 130, 76, 0.2);
+      border: 1px solid var(--green-light);
+      color: var(--text-white);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pill span {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .history-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .history-card h4 {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ==========================================================================
+       SEKCIJA: DOGAĐANJA (dogadjaj1.jpeg & dogadjaj2.jpeg)
+       ========================================================================== */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .event-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .event-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-7px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    }
+
+    .event-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 2px solid var(--green-primary);
+    }
+
+    .event-header {
+      background: linear-gradient(135deg, var(--bg-surface-elevated), #0f1612);
+      padding: 1.4rem;
+      position: relative;
+    }
+
+    .event-tag {
+      font-size: 0.72rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .event-header h3 {
+      font-size: 1.25rem;
+      color: #fff;
+    }
+
+    .event-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .event-meta {
+      display: flex;
+      gap: 15px;
+      font-size: 0.8rem;
+      color: var(--green-light);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       SEKCIJA: GALERIJA
+       ========================================================================== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      height: 300px;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+      opacity: 0;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay h4 {
+      font-size: 1.15rem;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .gallery-overlay p {
+      font-size: 0.82rem;
+      color: var(--text-white);
+      margin: 0;
+    }
+
+    /* MODALNI PREGLEDNIK SLIKA */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 900px;
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      display: block;
+      background: #000;
+    }
+
+    .modal-caption {
+      padding: 1.2rem;
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    /* ==========================================================================
+       SEKCIJA: KONTAKT
+       ========================================================================== */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+    }
+
+    .contact-info-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+
+    .contact-info-card h3 {
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(30, 130, 76, 0.2);
+      border: 1px solid var(--green-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.85rem 1rem;
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--green-light);
+      box-shadow: 0 0 15px rgba(46, 204, 113, 0.25);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #050706;
+      border-top: 1px solid var(--border-subtle);
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .footer-logo-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: var(--text-dark);
+    }
+
+    .footer-greeting {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      letter-spacing: 3px;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DIZAJN
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero .subtitle {
+        border-left: none;
+        padding-left: 0;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .about-grid,
+      .skok-feature,
+      .barbara-wrapper,
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .ceremony-steps,
+      .events-grid,
+      .patrons-grid {
+        grid-template-columns: 1fr;
+      }
+      .strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-surface-elevated);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.2rem;
+        border-bottom: 2px solid var(--gold);
+        transform: translateY(-150%);
+        transition: transform 0.4s ease;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.85);
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-logo-right {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.85rem;
+      }
+
+      .strip-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGACIJA S OBA PRAVA LOGOTIPA
+       ========================================================================== -->
+  <header class="site-nav">
+    <div class="nav-container">
+      
+      <!-- GORNJI LIJEVI KUT: LOGO UDRUGE SRETNO (udruga.png) -->
+      <a href="#pocetna" class="nav-logo-left" title="Udruga SRETNO!">
+        <img 
+          src="images/udruga.png" 
+          alt="Logo Udruge SRETNO!" 
+          class="logo-img-sretno"
+          onerror="this.onerror=null; this.src='udruga.png';"
+        >
+        <div class="logo-text-group">
+          <span class="logo-main-text">UDRUGA SRETNO!</span>
+          <span class="logo-sub-text">85 GODINA TRADICIJE</span>
+        </div>
+      </a>
+
+      <!-- SREDIŠNJI IZBORNIK -->
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#pocetna" class="nav-item">Početna</a></li>
+          <li><a href="#o-nama" class="nav-item">O nama</a></li>
+          <li><a href="#skok-preko-koze" class="nav-item">Skok preko kože</a></li>
+          <li><a href="#sveta-barbara" class="nav-item">Sveta Barbara</a></li>
+          <li><a href="#dogadanja" class="nav-item">Događanja</a></li>
+          <li><a href="#galerija" class="nav-item">Galerija</a></li>
+          <li><a href="#kontakt" class="nav-item">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <!-- GORNJI DESNI KUT: LOGO RGNF-A (rgnf.jpg) -->
+      <a href="https://www.rgn.unizg.hr" target="_blank" rel="noopener noreferrer" class="nav-logo-right" title="Rudarsko-geološko-naftni fakultet Sveučilišta u Zagrebu">
+        <div class="rgnf-meta">
+          <div class="rgnf-title">RGNF</div>
+          <div class="rgnf-sub">SVEUČILIŠTE U ZAGREBU</div>
+        </div>
+        <img 
+          src="images/rgnf.jpg" 
+          alt="Logo RGNF fakulteta" 
+          class="logo-img-rgnf"
+          onerror="this.onerror=null; this.src='rgnf.jpg';"
+        >
+      </a>
+
+      <!-- GUMB ZA MOBITEL -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Otvorite navigaciju">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SEKCIJA
+       ========================================================================== -->
+  <section id="pocetna" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        
+        <div class="hero-text-block">
+          <div class="badge-tradition">
+            <span class="pulse"></span> 85 GODINA DUGA TRADICIJA (1939. – 2024.)
+          </div>
+          <h1 class="gold-title">XXXV. SKOK PREKO KOŽE</h1>
+          <div class="subtitle">Svečano primanje studenata u časni rudarski stalež</div>
+          <p class="desc">
+            Udruga „Sretno!” i studenti Rudarsko-geološko-naftnog fakulteta Sveučilišta u Zagrebu ponosno njeguju europsku rudarsku baštinu. Kroz drevni ceremonijal skoka preko kože, brucoši rudarstva, geologije i naftnog rudarstva polažu prisegu vjernosti struci, kolegijalnosti i zajedništvu.
+          </p>
+          <div class="hero-buttons">
+            <a href="#skok-preko-koze" class="btn btn-gold">
+              <span>Istraži ceremonijal</span>
+              <span>⛏</span>
+            </a>
+            <a href="#galerija" class="btn btn-outline">
+              <span>Pogledaj galeriju</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- AMBLEM I STATISTIČKA KARTICA SA SLIKOM UDRUGA.PNG -->
+        <div class="hero-card">
+          <div class="hero-card-img-wrapper">
+            <img 
+              src="images/udruga.png" 
+              alt="Udruga SRETNO! amblem" 
+              class="hero-card-img"
+              onerror="this.onerror=null; this.src='udruga.png';"
+            >
+          </div>
+
+          <h3>UDRUGA „SRETNO!”</h3>
+          <p>Rudarsko-geološko-naftni fakultet Sveučilišta u Zagrebu</p>
+          
+          <div class="hero-stats">
+            <div class="stat-box">
+              <span class="number">35.</span>
+              <span class="label">Skok preko kože</span>
+            </div>
+            <div class="stat-box">
+              <span class="number">85</span>
+              <span class="label">Godina tradicije</span>
+            </div>
+            <div class="stat-box">
+              <span class="number">28</span>
+              <span class="label">Zlatnih gumbi</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TRADITION STRIP
+       ========================================================================== -->
+  <div class="tradition-strip">
+    <div class="container">
+      <div class="strip-grid">
+        <div class="strip-item">
+          <h4>1939.</h4>
+          <p>Prvi Skok u Zagrebu</p>
+        </div>
+        <div class="strip-item">
+          <h4>4. XII.</h4>
+          <p>Dan Svete Barbare</p>
+        </div>
+        <div class="strip-item">
+          <h4>400+</h4>
+          <p>Uvaženih uzvanika</p>
+        </div>
+        <div class="strip-item">
+          <h4>XVII. st.</h4>
+          <p>Pozdrav „SRETNO!”</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SEKCIJA: O NAMA
+       ========================================================================== -->
+  <section id="o-nama">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="tagline">Akademsko i rudarsko zajedništvo</span>
+        <h2 class="gold-title">O Udruzi Sretno!</h2>
+        <div class="divider"><span class="divider-icon">⛏</span></div>
+      </div>
+
+      <div class="about-grid">
+        
+        <div>
+          <div class="about-card">
+            <h3>Čuvari rudarskog staleža</h3>
+            <p>
+              Udruga „Sretno!” okuplja sadašnje i bivše studente Rudarsko-geološko-naftnog fakulteta Sveučilišta u Zagrebu. Prvenstvena zadaća Udruge je promoviranje rudarske tradicije organiziranjem cjelovitog ceremonijala Skoka preko kože i popratnih manifestacija.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h3>Veza mladih i starih bajti</h3>
+            <p>
+              Skok preko kože omogućuje mladim i starim bajtama ugodno druženje i obnovu kontakata s kolegama te prisjećanje na dane kada su i oni bili sudionici Skoka. Svečane crne odore sa zlatnim amblemima i 28 zlatnih gumbi predstavljaju rudarstvo, geologiju i naftaštvo kao jedinstvenu veliku obitelj.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h3>Zahvala pokroviteljima i RGNF-u</h3>
+            <p>
+              U ime članova Udruge „Sretno!” i studenata zahvaljujemo svim pokroviteljima, sponzorima i donatorima čija pomoć uvelike doprinosi održavanju ove manifestacije. Posebno zahvaljujemo <strong>Rudarsko-geološko-naftnom fakultetu</strong> na kontinuiranoj podršci.
+            </p>
+          </div>
+        </div>
+
+        <!-- VODSTVO I ČASNE FUNKCIJE XXXV. SKOKA -->
+        <div class="officers-card">
+          <h3>Vodstvo XXXV. Skoka</h3>
+          <div class="officers-list">
+            <div class="officer-item">
+              <span class="officer-role">Predsjednik Udruge SRETNO!</span>
+              <span class="officer-name">Filip Božić, mag. ing. petrol.</span>
+            </div>
+            <div class="officer-item">
+              <span class="officer-role">Predsjednica Odbora XXXV. Skoka</span>
+              <span class="officer-name">Josipa Babić</span>
+            </div>
+            <div class="officer-item">
+              <span class="officer-role">Praesidium (Apsolutna vlast)</span>
+              <span class="officer-name">Matko Žbulj</span>
+            </div>
+            <div class="officer-item">
+              <span class="officer-role">Adlatus Dexter</span>
+              <span class="officer-name">Tomislav Ovčarić</span>
+            </div>
+            <div class="officer-item">
+              <span class="officer-role">Adlatus Sinister</span>
+              <span class="officer-name">Stefanie Jurić</span>
+            </div>
+            <div class="officer-item">
+              <span class="officer-role">Contrapic Dexter</span>
+              <span class="officer-name">Tomislav Đidara</span>
+            </div>
+            <div class="officer-item">
+              <span class="officer-role">Contrapic Sinister</span>
+              <span class="officer-name">David Aščić</span>
+            </div>
+            <div class="officer-item">
+              <span class="officer-role">Cantor (Glazbeni maestro)</span>
+              <span class="officer-name">Davor Dropuljić</span>
+            </div>
+            <div class="officer-item">
+              <span class="officer-role">Brucmajor</span>
+              <span class="officer-name">Toni Vlahović</span>
+            </div>
+            <div class="officer-item">
+              <span class="officer-role">Držači kože (Ugledni rudari)</span>
+              <span class="officer-name">prof. dr. sc. Z. Ester & prof. dr. sc. B. Kavedžija</span>
+            </div>
+          </div>
+
+          <div class="greeting-box">
+            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--green-light);">Drevni rudarski pozdrav</span>
+            <strong>SRETNO!</strong>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEKCIJA: SKOK PREKO KOŽE (KORISTI skok.jpeg)
+       ========================================================================== -->
+  <section id="skok-preko-koze" style="background: var(--bg-surface-elevated);">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="tagline">Ritual primanja novih rudara</span>
+        <h2 class="gold-title">Skok preko kože</h2>
+        <div class="divider"><span class="divider-icon">⚡</span></div>
+      </div>
+
+      <!-- FOTOGRAFIJA SKOKA (skok.jpeg) I OPIS -->
+      <div class="skok-feature">
+        
+        <div class="skok-photo-container">
+          <img 
+            src="images/skok.jpeg" 
+            alt="Trenutak skoka preko kože – student skače s bačve" 
+            id="mainSkokImg"
+            onerror="this.onerror=null; this.src='skok.jpeg';"
+          >
+          <div class="photo-caption">
+            <strong>Trenutak skoka (skok.jpeg):</strong> Brucoš s bačve skače preko rudarske kože, izgovara svoje životno geslo i ispija kriglu piva pod budnim okom uvaženih ispitivača.
+          </div>
+        </div>
+
+        <div>
+          <h3 class="gold-title" style="font-size: 2rem; margin-bottom: 1.2rem;">Povijest i značaj običaja</h3>
+          <p>
+            Mnogi su mišljenja da rudarstvo ne traži toliko vještine i znanja koliko tjelesnog rada. Međutim, rudar mora biti krajnje iskusan, poznavati stijenu i zakonitosti podzemlja. S vremenom rudari su dobili povlastice, pravo nošenja oružja i lova, a rad u oknu postao je zanimanje slobodnih i visokocijenjenih stručnjaka.
+          </p>
+          <p>
+            Da bi rudar postao <strong>majstor</strong>, morao je položiti ispit spretnosti i odvažnosti. U najranije doba to je bilo preskakanje samog okna. Kada su okna postala preširoka, okno je zamijenjeno <em>rudarskom kožom</em> – dijelom opreme koju su rudari nosili straga kako bi se, sjedeći na njoj, spuštali strmim hodnicima jame.
+          </p>
+          <p>
+            Prvi Skok u Hrvatskoj održan je <strong>1939. godine u Zagrebu</strong>. RGN fakultet je jedini fakultet koji ima manifestaciju s tolikom dugovječnosti, te je ona postala prepoznatljiv dio tradicije i akademskog života Grada Zagreba.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- FAZE CEREMONIJALA -->
+      <h3 style="text-align: center; color: var(--gold); font-size: 1.8rem; margin-top: 3rem;">Tijek ceremonijala</h3>
+      <div class="ceremony-steps">
+        
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4>Ophod Zagrebom i potraga</h4>
+          <p>
+            Uoči same proslave, odjeveni u tradicionalne uniforme, s rudarskim svjetiljkama i kacigama, brucoši pod vodstvom <em>Nobl-bruca</em> obilaze grad, pjevaju rudarske pjesme i ponizno mole <strong>Brucmajora</strong> da ih povede na Skok.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4>Ispit i duhovite dosjetke</h4>
+          <p>
+            U svečanoj dvorani pred <em>Praesidiumom</em>, stare bajte brucošima postavljaju stručna i šaljiva pitanja kako bi provjerili njihovo znanje i snalažljivost. Svaki kandidat mora pred svima dokazati da je spreman za rudarsko bratstvo.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4>Skok s bačve i geslo</h4>
+          <p>
+            Prije samog skoka brucoš se predstavlja zajednici svojim geslom, penje se na bačvu i skače preko kože koju drže dva uvažena starija rudara. Nakon skoka pije se krigla piva i pjevaju se himne <em>„Jamari”</em>, <em>„Sa tornja”</em> i <em>„Sretno”</em>.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- VISOKI POKROVITELJI -->
+      <div class="patronage-box">
+        <h3>Visoki pokrovitelji manifestacije</h3>
+        <p>Kontinuitet i značaj Skoka preko kože potvrđuje podrška najviših državnih i gradskih institucija:</p>
+        
+        <div class="patrons-grid">
+          
+          <div class="patron-card">
+            <div class="patron-title">Predsjednik Republike Hrvatske</div>
+            <div class="patron-name">Zoran Milanović</div>
+            <p class="patron-desc">Pokroviteljstvo nad održavanjem tradicionalne rudarske svečanosti Skok preko kože</p>
+          </div>
+
+          <div class="patron-card">
+            <div class="patron-title">Gradonačelnik Grada Zagreba</div>
+            <div class="patron-name">Tomislav Tomašević</div>
+            <p class="patron-desc">Pokroviteljstvo Grada Zagreba nad manifestacijom u Kristalnoj dvorani hotela Westin</p>
+          </div>
+
+          <div class="patron-card">
+            <div class="patron-title">Ministarstvo znanosti, obrazovanja i mladih</div>
+            <div class="patron-name">prof. dr. sc. Radovan Fuchs</div>
+            <p class="patron-desc">Podrška staroj europskoj tradiciji i obrazovanju novih inženjerskih generacija</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PROTOKOL I FORMULE OSLOVLJAVANJA -->
+      <div class="protocol-box">
+        <h4>Karakteristično oslovljavanje tijekom Skoka</h4>
+        <div class="quote-box">
+          <strong>Brucoši govore:</strong> „Slavni, časni, visoki i nepogrešivi Praesidiume, slavne časne tablice, slavni kontrariji i kontrarijske tablice, slavni Brucmajore!”
+        </div>
+        <div class="quote-box">
+          <strong>Bajte govore:</strong> „Slavni, časni, visoki i nepogrešivi Praesidiume, slavne časne tablice, slavni Contrapic Dexteru!”
+        </div>
+        <div class="quote-box">
+          <strong>Časne tablice govore:</strong> „Slavni, časni, visoki i nepogrešivi Praesidiume!”
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEKCIJA: SVETA BARBARA (KORISTI sv-barbara.jpg)
+       ========================================================================== -->
+  <section id="sveta-barbara">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="tagline">4. prosinca – Rudarski blagdan</span>
+        <h2 class="gold-title">Sveta Barbara</h2>
+        <div class="divider"><span class="divider-icon">👑</span></div>
+      </div>
+
+      <div class="barbara-wrapper">
+        
+        <!-- FOTOGRAFIJA SVETE BARBARE (sv-barbara.jpg) -->
+        <div class="barbara-frame">
+          <img 
+            src="images/sv-barbara.jpg" 
+            alt="Slika svete Barbare – zaštitnice rudara" 
+            onerror="this.onerror=null; this.src='sv-barbara.jpg';"
+          >
+        </div>
+
+        <!-- TEKST O SVETOJ BARBARI -->
+        <div>
+          <h3 class="gold-title" style="font-size: 2rem; margin-bottom: 1.2rem;">Legenda i štovanje</h3>
+          <p>
+            Rudarska tradicija neraskidivo je povezana sa svetom zaštitnicom rudara – svetom Barbarom, a <strong>4. prosinac</strong> je njihov rudarski praznik. Prema predaji, sv. Barbara živjela je početkom 4. stoljeća u Nikomediji. Njezin otac Dioskur zatvorio ju je u kulu, no Barbara je u kuli dala načiniti <strong>tri prozora</strong> kao simbol Presvetog Trojstva te se tajno krstila.
+          </p>
+          
+          <div class="symbols-pills">
+            <div class="pill"><span>⛏</span> 28 zlatnih gumbi (godine života sv. Barbare)</div>
+            <div class="pill"><span>🏰</span> Kula s 3 prozora (Presveto Trojstvo)</div>
+            <div class="pill"><span>⚔</span> Mač i kalež (Vjera i hrabrost pred opasnošću)</div>
+          </div>
+
+          <p>
+            Zbog nepokolebljive vjere pretrpjela je mučeništvo, a predaja bilježi da je njezina oca odmah potom pogodila munja s vedrog neba. Zbog toga se sveta Barbara zaziva u pomoć protiv groma, požara i iznenadnih pogibelji u tami podzemlja.
+          </p>
+
+          <div class="history-card">
+            <h4>Rudnik sv. Barbare u Rudama & Velika Mlaka</h4>
+            <p>
+              U Rudama kraj Samobora, gdje su rudari još u 16. stoljeću vadili bakar i željezo, danas se nalazi obnovljeni turistički rudnik sv. Barbare i njeguje tradicionalno <em>Barbarinje</em> uz pripremu glasovite <strong>Rudarske greblice</strong> (zaštićeno kulturno dobro).
+            </p>
+            <p style="margin: 0;">
+              U Velikoj Mlaki nalazi se najreprezentativniji primjer baroknog drvenog sakralnog graditeljstva – kapela sv. Barbare iz 1642. godine, građena od turopoljske hrastovine.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEKCIJA: DOGAĐANJA (KORISTI dogadjaj1.jpeg & dogadjaj2.jpeg)
+       ========================================================================== -->
+  <section id="dogadanja" style="background: var(--bg-surface);">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="tagline">Međunarodna suradnja i tradicijski susreti</span>
+        <h2 class="gold-title">Događanja i putovanja</h2>
+        <div class="divider"><span class="divider-icon">🌍</span></div>
+      </div>
+
+      <div class="events-grid">
+        
+        <!-- GEORUDARIJADA (dogadjaj1.jpeg) -->
+        <div class="event-card">
+          <img 
+            src="images/dogadjaj1.jpeg" 
+            alt="Georudarijada – susret studenata rudarstva" 
+            class="event-card-img"
+            onerror="this.onerror=null; this.src='dogadjaj1.jpeg';"
+          >
+          <div class="event-header">
+            <span class="event-tag">Sport i edukacija</span>
+            <h3>Georudarijada: Trogir & Sokobanja</h3>
+          </div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span>📍 Trogir 2024. / Sokobanja 2023.</span>
+            </div>
+            <p>
+              Susret studenata rudarstva, geologije i naftnog rudarstva iz cijele regije (Hrvatska, Slovenija, Srbija, BiH). Na Georudarijadi 2024. u Hotelu Medena u Trogiru sudjelovalo je preko 300 studenata, a <strong>ekipa RGNF-a iz Zagreba odnijela je veliku pobjedu</strong> i prijelazni pehar!
+            </p>
+          </div>
+        </div>
+
+        <!-- RAZGLEDNICA IZ LJUBLJANE I TUZLE (dogadjaj2.jpeg) -->
+        <div class="event-card">
+          <img 
+            src="images/dogadjaj2.jpeg" 
+            alt="Skok čez kožo Ljubljana i Tuzla" 
+            class="event-card-img"
+            onerror="this.onerror=null; this.src='dogadjaj2.jpeg';"
+          >
+          <div class="event-header">
+            <span class="event-tag">Međunarodni skokovi</span>
+            <h3>Razglednice: Ljubljana & Tuzla</h3>
+          </div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span>📍 Ljubljana (Slovenija) & Tuzla (BiH)</span>
+            </div>
+            <p>
+              Udruga Sretno! sudjelovala je na jubilarnoj 100. godišnjici i 48. Skoku čez kožo u Ljubljani (Grand Hotel Union) te na 18. Skoku preko kože u Tuzli u suradnji s kolegama s RGGF-a i rudarima iz Prijedora.
+            </p>
+          </div>
+        </div>
+
+        <!-- SMOTRA STUDENTSKIH UDRUGA -->
+        <div class="event-card">
+          <div style="height: 200px; background: #151d18; display: flex; align-items: center; justify-content: center; border-bottom: 2px solid var(--green-primary); padding: 15px;">
+            <img 
+              src="images/udruga.png" 
+              alt="Logo Udruge" 
+              style="max-height: 140px; width: auto;"
+              onerror="this.onerror=null; this.src='udruga.png';"
+            >
+          </div>
+          <div class="event-header">
+            <span class="event-tag">Promocija baštine</span>
+            <h3>Smotra studentskih udruga</h3>
+          </div>
+          <div class="event-body">
+            <div class="event-meta">
+              <span>📍 Studentski centar, Zagreb (2024.)</span>
+            </div>
+            <p>
+              U svibnju 2024. Udruga Sretno! sudjelovala je na Smotri studentskih udruga Sveučilišta u Zagrebu, približavajući kolegama s drugih fakulteta ljepotu, povijest i značaj rudarskog poziva i svečanog skoka.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEKCIJA: GALERIJA
+       ========================================================================== -->
+  <section id="galerija">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="tagline">Vizualni zapisi ponosa i tradicije</span>
+        <h2 class="gold-title">Galerija Skoka</h2>
+        <div class="divider"><span class="divider-icon">📸</span></div>
+      </div>
+
+      <div class="gallery-grid">
+        
+        <!-- SLIKA 1: COVER.JPEG -->
+        <div class="gallery-item" onclick="openModal('images/cover.jpeg', 'cover.jpeg', 'Svečana dvorana – sudionici Skoka preko kože s kriglama i kacigama')">
+          <img 
+            src="images/cover.jpeg" 
+            alt="Svečana dvorana" 
+            onerror="this.onerror=null; this.src='cover.jpeg';"
+          >
+          <div class="gallery-overlay">
+            <h4>Svečani zbor</h4>
+            <p>Grupna fotografija svih sudionika, brucoša i časnih tablica</p>
+          </div>
+        </div>
+
+        <!-- SLIKA 2: SKOK.JPEG -->
+        <div class="gallery-item" onclick="openModal('images/skok.jpeg', 'skok.jpeg', 'Trenutak skoka preko kože – skok s bačve uz sablje ispitivača')">
+          <img 
+            src="images/skok.jpeg" 
+            alt="Skok s bačve" 
+            onerror="this.onerror=null; this.src='skok.jpeg';"
+          >
+          <div class="gallery-overlay">
+            <h4>Skok preko kože</h4>
+            <p>Inicijacija brucoša i primanje u rudarski stalež</p>
+          </div>
+        </div>
+
+        <!-- SLIKA 3: SV-BARBARA.JPG -->
+        <div class="gallery-item" onclick="openModal('images/sv-barbara.jpg', 'sv-barbara.jpg', 'Slika svete Barbare – zaštitnice rudara s kulom, mačem i kaležom')">
+          <img 
+            src="images/sv-barbara.jpg" 
+            alt="Sveta Barbara" 
+            onerror="this.onerror=null; this.src='sv-barbara.jpg';"
+          >
+          <div class="gallery-overlay">
+            <h4>Sveta Barbara</h4>
+            <p>Umjetnički prikaz zaštitnice rudara i geologa</p>
+          </div>
+        </div>
+
+        <!-- SLIKA 4: DOGADJAJ1.JPEG -->
+        <div class="gallery-item" onclick="openModal('images/dogadjaj1.jpeg', 'dogadjaj1.jpeg', 'Georudarijada – sportsko-edukacijski susret studenata rudarstva')">
+          <img 
+            src="images/dogadjaj1.jpeg" 
+            alt="Georudarijada" 
+            onerror="this.onerror=null; this.src='dogadjaj1.jpeg';"
+          >
+          <div class="gallery-overlay">
+            <h4>Georudarijada</h4>
+            <p>Pobjednička ekipa RGNF-a u sportu i znanju</p>
+          </div>
+        </div>
+
+        <!-- SLIKA 5: DOGADJAJ2.JPEG -->
+        <div class="gallery-item" onclick="openModal('images/dogadjaj2.jpeg', 'dogadjaj2.jpeg', 'Prijateljski posjeti i tradicijski susreti u Ljubljani i Tuzli')">
+          <img 
+            src="images/dogadjaj2.jpeg" 
+            alt="Događaj u regiji" 
+            onerror="this.onerror=null; this.src='dogadjaj2.jpeg';"
+          >
+          <div class="gallery-overlay">
+            <h4>Regionalna suradnja</h4>
+            <p>Tradicijski skokovi u susjednim zemljama</p>
+          </div>
+        </div>
+
+        <!-- SLIKA 6: UDRUGA.PNG LOGO U GALERIJI -->
+        <div class="gallery-item" onclick="openModal('images/udruga.png', 'udruga.png', 'Službeni amblem i zaštitni znak Udruge SRETNO!')" style="background: #111a14; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+          <img 
+            src="images/udruga.png" 
+            alt="Amblem Udruge Sretno" 
+            style="width: 80%; height: 80%; object-fit: contain;"
+            onerror="this.onerror=null; this.src='udruga.png';"
+          >
+          <div class="gallery-overlay">
+            <h4>Amblem Udruge</h4>
+            <p>Zeleni rudarski kompas s ukrštenim čekićima i pozdravom SRETNO!</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODALNI PREGLEDNIK ZA FOTOGRAFIJE -->
+  <div class="modal" id="imageModal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <img id="modalImg" src="" alt="Prikaz fotografije">
+      <div class="modal-caption" id="modalCaption"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SEKCIJA: KONTAKT
+       ========================================================================== -->
+  <section id="kontakt" style="background: var(--bg-surface-elevated);">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="tagline">Ostanimo povezani</span>
+        <h2 class="gold-title">Kontakt i sjedište</h2>
+        <div class="divider"><span class="divider-icon">✉</span></div>
+      </div>
+
+      <div class="contact-wrapper">
+        
+        <!-- INFORMACIJE -->
+        <div class="contact-info-card">
+          <h3>Udruga „Sretno!”</h3>
+          <p>
+            Udruga studenata i diplomiranih inženjera Rudarsko-geološko-naftnog fakulteta Sveučilišta u Zagrebu.
+          </p>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong style="color: #fff; display: block;">Adresa sjedišta:</strong>
+              <span>Pierottijeva ulica 6 (RGN fakultet)<br>10 000 Zagreb, Hrvatska</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">🎓</div>
+            <div>
+              <strong style="color: #fff; display: block;">Institucionalna pripadnost:</strong>
+              <span>Rudarsko-geološko-naftni fakultet<br>Sveučilište u Zagrebu</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">⛏</div>
+            <div>
+              <strong style="color: #fff; display: block;">Predsjednik udruge:</strong>
+              <span>Filip Božić, mag. ing. petrol.</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">⭐</div>
+            <div>
+              <strong style="color: #fff; display: block;">Organizacijski odbor Skoka:</strong>
+              <span>Josipa Babić, predsjednica odbora</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMULAR ZA UPITE -->
+        <div class="contact-form">
+          <h3 style="color: var(--gold); font-size: 1.4rem; margin-bottom: 1.5rem;">Pošaljite poruku Udruzi</h3>
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="name">Ime i prezime</label>
+              <input type="text" id="name" class="form-control" placeholder="Vaše cijenjeno ime" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail adresa</label>
+              <input type="email" id="email" class="form-control" placeholder="vas.email@domena.hr" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Status / Tema</label>
+              <select id="subject" class="form-control">
+                <option value="brucos">Brucoš RGNF-a</option>
+                <option value="stara-bajta">Stara bajta (Alumni)</option>
+                <option value="pokrovitelj">Pokroviteljstvo / Sponzorstvo</option>
+                <option value="opcenito">Opći upit o tradiciji</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Poruka</label>
+              <textarea id="message" rows="4" class="form-control" placeholder="Upišite vašu poruku..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center;">
+              <span>Pošalji poruku</span>
+              <span>⛏</span>
+            </button>
+            <div id="formSuccess" style="display: none; color: var(--green-light); margin-top: 1rem; text-align: center; font-weight: 600;">
+              Hvala vam na poruci! Javit ćemo vam se ubrzo uz rudarski pozdrav SRETNO!
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PODNOŽJE (FOOTER) S OBA LOGOTIPA
+       ========================================================================== -->
+  <footer>
+    <div class="container">
+      
+      <div class="footer-logo-row">
+        <!-- Logo Udruge -->
+        <img 
+          src="images/udruga.png" 
+          alt="Logo Udruga Sretno" 
+          style="width: 48px; height: 48px; object-fit: contain; border-radius: 50%;"
+          onerror="this.onerror=null; this.src='udruga.png';"
+        >
+
+        <div class="footer-greeting">SRETNO!</div>
+
+        <!-- Logo RGNF -->
+        <img 
+          src="images/rgnf.jpg" 
+          alt="Logo RGNF" 
+          style="width: 45px; height: 45px; object-fit: contain; border-radius: 6px; background: #fff; padding: 2px;"
+          onerror="this.onerror=null; this.src='rgnf.jpg';"
+        >
+      </div>
+
+      <p style="color: var(--gold); font-size: 0.95rem; margin-bottom: 0.5rem; font-weight: 500;">
+        Udruga „Sretno!” & Rudarsko-geološko-naftni fakultet Sveučilišta u Zagrebu
+      </p>
+      
+      <div class="footer-copy">
+        &copy; 1939. – 2024. Tradicionalna rudarska manifestacija Skok preko kože. Sva prava pridržana.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT FUNKCIONALNOSTI
+       ========================================================================== -->
+  <script>
+    // Mobilni izbornik toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // Zatvaranje izbornika klikom na link
+    document.querySelectorAll('.nav-item').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.textContent = '☰';
+      });
+    });
+
+    // Zatamnjenje navigacije pri skrolanju
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.site-nav');
+      if (window.scrollY > 80) {
+        nav.style.background = 'rgba(9, 12, 10, 0.98)';
+        nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.75)';
+      } else {
+        nav.style.background = 'var(--bg-glass)';
+        nav.style.boxShadow = 'none';
+      }
+    });
+
+    // Modalni preglednik fotografija
+    const imageModal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
+
+    function openModal(imgSrc, fallbackSrc, captionText) {
+      modalImg.src = imgSrc;
+      modalImg.onerror = function() {
+        this.onerror = null;
+        this.src = fallbackSrc;
+      };
+      modalCaption.textContent = captionText;
+      imageModal.classList.add('active');
+    }
+
+    function closeModal() {
+      imageModal.classList.remove('active');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Slanje obrasca
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const btn = event.target.querySelector('button');
+      btn.style.opacity = '0.7';
+      btn.innerHTML = '<span>Slanje u tijeku...</span>';
+      
+      setTimeout(() => {
+        document.getElementById('formSuccess').style.display = 'block';
+        event.target.reset();
+        btn.style.opacity = '1';
+        btn.innerHTML = '<span>Poruka je poslana</span> <span>✓</span>';
+      }, 900);
+    }
+  </script>
+
+</body>
+</html>
