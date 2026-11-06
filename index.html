@@ -32,7 +32,7 @@ p+p{margin-top:1.1em}
 strong{font-weight:500;color:var(--white)}
 em{font-family:var(--serif);font-size:1.12em;color:var(--gold-soft)}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:600;color:var(--white);line-height:1.12;letter-spacing:.005em}
-.wrap{width:min(1180px,100% - 3rem);margin-inline:auto}
+.wrap{width:min(1180px,100% - clamp(2.5rem, 5vw, 4.5rem));margin-inline:auto}
 section{padding:clamp(5rem,10vw,8.5rem) 0;position:relative}
 .alt{background:var(--bg2);border-block:1px solid var(--line-soft)}
 .eyebrow{font:500 .72rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--green)}
@@ -61,42 +61,64 @@ section{padding:clamp(5rem,10vw,8.5rem) 0;position:relative}
 .menu a:hover::after,.menu a.on::after{transform:scaleX(1);transform-origin:left}
 .burger{display:none;background:none;border:1px solid var(--line);color:var(--gold);font:500 .68rem var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:.65rem 1rem;cursor:pointer}
 
-/* Hero */
-.hero{min-height:100svh;display:flex;align-items:center;padding:9rem 0 5rem;background:
-  radial-gradient(ellipse 60% 50% at 80% 40%,rgba(29,90,59,.28),transparent 70%),
-  radial-gradient(ellipse 40% 40% at 10% 100%,rgba(200,165,74,.07),transparent 70%)}
-.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
-.hero .eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;color:var(--gold)}
-.hero .eyebrow::before{content:'';width:48px;height:1px;background:var(--gold)}
-.hero h1{font-size:clamp(3.2rem,8.2vw,7.2rem);font-weight:500;color:var(--gold);line-height:.98;margin-bottom:1.6rem}
+/* Hero Section */
+.hero{min-height:90svh;display:flex;align-items:center;padding:8.5rem 0 3.5rem;background:
+  radial-gradient(ellipse 65% 55% at 75% 35%,rgba(29,90,59,.22),transparent 70%),
+  radial-gradient(ellipse 45% 45% at 10% 90%,rgba(200,165,74,.06),transparent 70%)}
+.hero-wrap{width:100%}
+.hero-main{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero-text{padding-left:clamp(0.4rem, 1.8vw, 1.8rem)}
+.hero-text .eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;color:var(--gold)}
+.hero-text .eyebrow::before{content:'';width:48px;height:1px;background:var(--gold)}
+.hero h1{font-size:clamp(2.9rem,6.4vw,6rem);font-weight:500;color:var(--gold);line-height:.98;margin-bottom:1.5rem}
 .hero h1 span{display:block;color:var(--white);font-style:italic;font-size:.52em;font-weight:500;margin-top:.35em}
-.lead{font:500 .8rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:1.5rem}
-.hero p.desc{max-width:560px}
-.actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.6rem}
+.lead{font:500 .8rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:1.4rem}
+.hero p.desc{max-width:530px;font-size:1.05rem}
+.actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.4rem}
 .btn{display:inline-block;font:500 .74rem var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:1.05rem 2.1rem;border:1px solid var(--gold);cursor:pointer;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s}
 .btn-solid{background:var(--gold);color:#0a0a09}
 .btn-solid:hover{background:var(--gold-soft);border-color:var(--gold-soft);color:#0a0a09}
 .btn-line{background:transparent;color:var(--white);border-color:var(--line-soft)}
 .btn-line:hover{border-color:var(--green);color:var(--white)}
 
-/* Kartica nadolazećeg događaja */
-.event{border:1px solid var(--line);padding:clamp(1.8rem,3vw,2.8rem);position:relative;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent)}
-.event::before{content:'';position:absolute;inset:9px;border:1px solid var(--line-soft);pointer-events:none}
-.event h3{font-size:clamp(2.1rem,3.6vw,3rem);color:var(--gold);margin:.9rem 0 1.4rem}
-.event dl div{display:flex;justify-content:space-between;gap:1.2rem;padding:.85rem 0;border-top:1px solid var(--line-soft);font-size:.92rem}
-.event dt{color:var(--mute);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;padding-top:.15rem}
-.event dd{color:var(--white);text-align:right}
-.count{margin-top:1.2rem;padding-top:1.4rem;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:.9rem}
-.count b{font:600 3.2rem/1 var(--serif);color:var(--white)}
-.count span{font:400 .7rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+/* Slika u Hero sekciji - BEZ OKVIRA s fade-out prijelazom */
+.hero-media{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-img-wrap{
+  position:relative;
+  width:100%;
+  border:none;
+  box-shadow:none;
+  background:transparent;
+  -webkit-mask-image:linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 14%, rgba(0,0,0,1) 38%);
+  mask-image:linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 14%, rgba(0,0,0,1) 38%);
+}
+.hero-img-wrap img{
+  width:100%;
+  height:auto;
+  aspect-ratio:16/11;
+  object-fit:cover;
+  display:block;
+  transform:scale(1.01);
+  transition:transform 1.2s var(--ease);
+}
+.hero-img-wrap:hover img{transform:scale(1.03)}
 
-/* Traka */
+/* Traka - zajednički dizajn za Sljedeći Skok i Povijesne crtice */
 .strip{border-block:1px solid var(--line)}
 .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
 .strip div{padding:2.2rem 1.4rem;text-align:center}
 .strip div+div{border-left:1px solid var(--line-soft)}
-.strip b{display:block;font:600 2.1rem/1 var(--serif);color:var(--gold)}
+.strip b{display:block;font:600 clamp(1.4rem, 2.2vw, 2.1rem)/1.15 var(--serif);color:var(--gold);white-space:nowrap}
 .strip span{font:400 .7rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mute);display:block;margin-top:.6rem}
+.strip-next{border-bottom:none;background:rgba(18,21,18,.35)}
+
+/* Velike panoramske fotografije unutar sekcija */
+.banner-photo{position:relative;margin:clamp(2rem,4vw,3.2rem) 0}
+.banner-fig{position:relative;border:1px solid var(--line);overflow:hidden;background:var(--bg3)}
+.banner-fig::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,9,10,.7) 0%,transparent 35%);pointer-events:none}
+.banner-fig img{width:100%;height:clamp(240px,34vw,420px);object-fit:cover;object-position:center;transition:transform 1.2s var(--ease)}
+.banner-fig:hover img{transform:scale(1.025)}
+.banner-fig figcaption{position:absolute;left:1.5rem;bottom:1.2rem;font-size:.82rem;color:var(--gold-soft);letter-spacing:.05em;z-index:2;background:rgba(8,9,10,.82);padding:.4rem .9rem;border-left:1px solid var(--gold);backdrop-filter:blur(6px)}
 
 /* O nama */
 .about{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(2.5rem,6vw,6rem);align-items:start}
@@ -140,7 +162,7 @@ figcaption{font-size:.82rem;color:var(--mute);margin-top:1.4rem;padding-left:1re
 .tl h4{font-size:1.5rem;margin:0 0 .5rem}
 .tl p{font-size:.97rem}
 
-/* Tko sudjeluje i Anatomija - usklađene kartice */
+/* Tko sudjeluje i Anatomija */
 .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.4rem;background:transparent;border:none}
 .roles div{background:var(--bg2);border:1px solid var(--line-soft);padding:1.8rem;transition:border-color .4s var(--ease),transform .4s var(--ease)}
 .roles div:hover{border-color:var(--line);transform:translateY(-3px)}
@@ -260,17 +282,23 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   .menu a{display:block;padding:1rem 0}
   .rgnf div{display:none}
 }
-@media (max-width:1024px){
-  .section-with-side{grid-template-columns:1fr}
-  .side-illust{position:static;margin:2.5rem auto 0;max-width:280px}
-}
-@media (max-width:900px){
-  .hero-grid,.about,.feature,.barbara,.contact{grid-template-columns:1fr}
-  .officers{position:static}
-  .pgrid,.cards,.album-grid{grid-template-columns:1fr}
+@media (max-width:960px){
+  .hero-main{grid-template-columns:1fr;gap:2rem}
+  .hero-text{padding-left:0}
+  .hero-img-wrap{
+    -webkit-mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 12%, rgba(0,0,0,1) 32%);
+    mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 12%, rgba(0,0,0,1) 32%);
+    max-width:620px;
+    margin:0 auto;
+  }
   .strip .wrap{grid-template-columns:1fr 1fr}
   .strip div:nth-child(3){border-left:0}
   .strip div:nth-child(n+3){border-top:1px solid var(--line-soft)}
+  .section-with-side{grid-template-columns:1fr}
+  .side-illust{position:static;margin:2.5rem auto 0;max-width:280px}
+  .about,.feature,.barbara,.contact{grid-template-columns:1fr}
+  .officers{position:static}
+  .pgrid,.cards,.album-grid{grid-template-columns:1fr}
   figure::after{display:none}
   .barbara figure{max-width:420px}
   .note.pic{grid-template-columns:1fr}
@@ -279,12 +307,15 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   .brand small{display:none}
   .sec-head{grid-template-columns:1fr}
   .sec-head .no{grid-row:auto;padding:0}
-  .event dl div,.officers dl div{flex-direction:column;gap:.2rem}
-  .event dd,.officers dd{text-align:left}
+  .officers dl div{flex-direction:column;gap:.2rem}
+  .officers dd{text-align:left}
   .officers dt{max-width:none}
   .lb-btn{width:40px;height:40px;font-size:1.4rem}
   .lb-prev{left:6px}
   .lb-next{right:6px}
+  .strip div{padding:1.6rem 0.6rem}
+  .strip b{font-size:1.25rem}
+  .strip span{font-size:.64rem}
 }
 </style>
 </head>
@@ -317,31 +348,52 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
 </header>
 
 <main>
+<!-- Naslovni Hero s uravnoteženim tekstom i fotografijom bez obruba (fade out) -->
 <section class="hero" id="pocetna">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow rv" style="--d:.1s">Zagreb &middot; 1939. &ndash; <span id="heroYearSpan">2026.</span></div>
-      <h1 class="rv" style="--d:.25s">Skok preko kože<span id="heroEdition">XXXVI. po redu</span></h1>
-      <div class="lead rv" style="--d:.4s">Svečano primanje studenata u časni rudarski ceh</div>
-      <p class="desc rv" style="--d:.5s">Tradicionalni ceremonijal povodom Dana svete Barbare, zaštitnice rudara, geologa i naftaša. Svečano prima brucoše Rudarsko-geološko-naftnog fakulteta u časni rudarski stalež, a održava se svake dvije godine. Ova je godina godina Skoka.</p>
-      <div class="actions rv" style="--d:.65s">
-        <a href="#skok-preko-koze" class="btn btn-solid">Ceremonijal</a>
-        <a href="#galerija" class="btn btn-line">Galerija</a>
+  <div class="wrap hero-wrap">
+    <div class="hero-main">
+      <div class="hero-text">
+        <div class="eyebrow rv" style="--d:.1s">Zagreb &middot; 1939. &ndash; <span id="heroYearSpan">2026.</span></div>
+        <h1 class="rv" style="--d:.25s">Skok preko kože<span id="heroEdition">XXXVI. po redu</span></h1>
+        <div class="lead rv" style="--d:.4s">Svečano primanje studenata u časni rudarski ceh</div>
+        <p class="desc rv" style="--d:.5s">Tradicionalni ceremonijal povodom Dana svete Barbare, zaštitnice rudara, geologa i naftaša. Svečano prima brucoše Rudarsko-geološko-naftnog fakulteta u časni rudarski stalež, a održava se svake dvije godine. Ova je godina godina Skoka.</p>
+        <div class="actions rv" style="--d:.65s">
+          <a href="#skok-preko-koze" class="btn btn-solid">Ceremonijal</a>
+          <a href="#galerija" class="btn btn-line">Galerija</a>
+        </div>
+      </div>
+      <div class="hero-media rv" style="--d:.35s">
+        <div class="hero-img-wrap">
+          <img data-img src="images/cover.jpeg" alt="Članovi Udruge SRETNO!" decoding="async">
+        </div>
       </div>
     </div>
-    <aside class="event rv" style="--d:.5s">
-      <span class="eyebrow">Sljedeći Skok</span>
-      <h3 id="nextSkokDate">5. prosinca 2026.</h3>
-      <dl>
-        <div><dt>Početak</dt><dd>19:00</dd></div>
-        <div><dt>Mjesto</dt><dd>Kristalna dvorana, Hotel Westin, Zagreb</dd></div>
-        <div><dt>Status</dt><dd>Pripreme u tijeku</dd></div>
-      </dl>
-      <div class="count"><b id="days">–</b><span>dana do Skoka</span></div>
-    </aside>
   </div>
 </section>
 
+<!-- Traka 1: Informacije o sljedećem Skoku (4 polja, identičan dizajn i tipografija) -->
+<div class="strip strip-next">
+  <div class="wrap">
+    <div class="rv">
+      <b id="nextSkokDate">5. prosinca 2026.</b>
+      <span>Sljedeći Skok</span>
+    </div>
+    <div class="rv" style="--d:.1s">
+      <b>19:00 h</b>
+      <span>Vrijeme početka</span>
+    </div>
+    <div class="rv" style="--d:.2s">
+      <b>Hotel Westin</b>
+      <span>Kristalna dvorana, Zagreb</span>
+    </div>
+    <div class="rv" style="--d:.3s">
+      <b><span id="days">–</span> dana</b>
+      <span>Odbrojavanje do Skoka</span>
+    </div>
+  </div>
+</div>
+
+<!-- Traka 2: Povijesne crtice i tradicija -->
 <div class="strip">
   <div class="wrap">
     <div class="rv"><b>1939.</b><span>Prvi Skok u Zagrebu</span></div>
@@ -354,6 +406,15 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
 <section id="o-nama">
   <div class="wrap">
     <div class="sec-head rv"><span class="no">01</span><span class="eyebrow">Akademsko i rudarsko zajedništvo</span><h2>O Udruzi</h2></div>
+    
+    <!-- Slika pogled.jpg između naslova O Udruzi i Tko smo -->
+    <div class="banner-photo rv">
+      <figure class="banner-fig">
+        <img data-img src="images/pogled.jpg" alt="Članovi Udruge SRETNO! - pogled" loading="lazy" decoding="async">
+        <figcaption>Zajedništvo i ponos generacija studenata Rudarsko-geološko-naftnog fakulteta</figcaption>
+      </figure>
+    </div>
+
     <div class="about">
       <div>
         <article class="rv"><h3>Tko smo</h3><p>Udruga „Sretno!” osnovana je 1998. godine i okuplja sadašnje i bivše studente Rudarsko-geološko-naftnog fakulteta Sveučilišta u Zagrebu. Njezina je zadaća očuvanje i promicanje rudarske tradicije i kulturne baštine te jačanje osjećaja zajedništva i pripadnosti.</p></article>
@@ -393,7 +454,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
       </div>
     </div>
 
-    <!-- Anatomija skoka premještena odmah nakon Što je Skok -->
+    <!-- Anatomija skoka -->
     <h3 class="sub rv">Anatomija skoka</h3>
     <div class="roles rv">
       <div><h4>Skakač</h4><p>Brucoš koji skače s bačve.</p></div>
@@ -401,7 +462,6 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
       <div><h4>Koža</h4><p>Komad kože u obliku pregače, nekad neophodan dio radne odjeće rudara i simbol njegova zanata.</p></div>
       <div><h4>Bačva</h4><p>Postolje s kojeg brucoš skače preko kože.</p></div>
     </div>
-    <p class="rv" style="margin-top:1.6rem;max-width:760px">Prije skoka brucoš odgovara na tri pitanja: kako se zove, zašto je upisao RGNF i koji je njegov životni moto.</p>
 
     <h3 class="sub rv">Podrijetlo i povijest</h3>
     <div class="feature" style="align-items:start">
@@ -498,6 +558,15 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
 <section id="pjesme">
   <div class="wrap">
     <div class="sec-head rv"><span class="no">03</span><span class="eyebrow">Glazba ceremonijala</span><h2>Rudarske pjesme</h2></div>
+    
+    <!-- Slika pjev.jpg ispod naslova sekcije Rudarske pjesme -->
+    <div class="banner-photo rv">
+      <figure class="banner-fig">
+        <img data-img src="images/pjev.jpg" alt="Pjesma i veselje ceremonijala Skoka" loading="lazy" decoding="async">
+        <figcaption>Rudarske pjesme odjekuju dvoranom pod ravnanjem Cantora</figcaption>
+      </figure>
+    </div>
+
     <p class="rv" style="max-width:760px;margin-bottom:2.6rem">Skok je od prvog do posljednjeg trenutka ispunjen pjesmom. Glazbeni dio vodi Cantor, a okupljeni pjevaju iz Rudarske pjesmarice Udruge „Sretno!” (Zagreb, 2006.). Pjesmarica sadrži devet pjesama, a svaka ima svoje mjesto u večeri.</p>
     
     <div class="section-with-side">
@@ -538,7 +607,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
         <p>Zbog nepokolebljive vjere pretrpjela je mučeništvo. Poginula je za svoju vjeru 306. godine, u 28. godini života, što je razlog zašto je časna rudarska uniforma ukrašena s 28 zlatnih gumbi. Predaja bilježi da je njezina oca potom pogodila munja s vedrog neba, pa se sveta Barbara zaziva protiv groma, požara i iznenadnih pogibelji u tami podzemlja.</p>
         <p>Njezine se relikvije čuvaju na više mjesta: prema zapadnim izvorima, oko 1000. godine prenesene su u baziliku svetog Marka u Veneciji, a u Hrvatskoj se u crkvi svetog Blaža u Vodnjanu, u Istri, među 370 posmrtnih ostataka od oko 250 svetaca nalazi i stopalo svete Barbare.</p>
         
-        <!-- Rudnik sv. Barbare - slika s lijeve strane i opis -->
+        <!-- Rudnik sv. Barbare - slika s lijeve strane -->
         <div class="note pic">
           <figure class="note-fig">
             <img data-img src="images/rudnik.jpg" alt="Rudnik sv. Barbare u Rudama" loading="lazy" decoding="async">
@@ -550,7 +619,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
           </div>
         </div>
 
-        <!-- Svetišta svete Barbare - slika s lijeve strane i opis -->
+        <!-- Svetišta svete Barbare - slika s lijeve strane -->
         <div class="note pic">
           <figure class="note-fig">
             <img data-img src="images/crkva.jpg" alt="Crkva svete Barbare u Velikoj Mlaki" loading="lazy" decoding="async">
@@ -784,7 +853,6 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   }
 
   const skok = resolveNextSkok();
-  // Koristimo Math.floor kako bi prikazivao puni broj preostalih dana (npr. 29 dana umjesto zaokruživanja na 30)
   const daysDiff = Math.max(0, Math.floor((skok.date.getTime() - Date.now()) / (1000 * 60 * 60 * 24)));
 
   // Ažuriranje elemenata na stranici
@@ -809,7 +877,6 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   const lb = $('#lb'), lbImg = $('#lbImg'), lbCap = $('#lbCap'), lbCount = $('#lbCount');
 
   function getImgSrc(albumId, idx){
-    // Za 35 skok slike 19 i 20 imaju ekstenziju .jpeg
     if(albumId === 35 && (idx === 19 || idx === 20)){
       return `35%20skok/${idx}.jpeg`;
     }
