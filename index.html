@@ -110,7 +110,22 @@ section{padding:clamp(5rem,10vw,8.5rem) 0;position:relative}
 .strip div+div{border-left:1px solid var(--line-soft)}
 .strip b{display:block;font:600 clamp(1.4rem, 2.2vw, 2.1rem)/1.15 var(--serif);color:var(--gold);white-space:nowrap}
 .strip span{font:400 .7rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mute);display:block;margin-top:.6rem}
-.strip-next{border-bottom:none;background:rgba(18,21,18,.35)}
+.strip-inline{margin:clamp(2.5rem,5vw,4rem) 0}
+.strip-inline .wrap{width:100%}
+.strip-next{border:none;background:none;padding:0 0 clamp(2.5rem,5vw,4rem);margin-top:-1.5rem;position:relative;z-index:2}
+.strip-next .wrap{position:relative;border:1px solid var(--line);background:linear-gradient(180deg,rgba(18,21,18,.92),rgba(13,15,14,.92));box-shadow:0 24px 60px -28px rgba(0,0,0,.8)}
+.strip-next .wrap::before{content:'';position:absolute;left:-1px;right:-1px;top:-1px;height:2px;background:linear-gradient(90deg,transparent,var(--gold) 20%,var(--gold) 80%,transparent)}
+.strip-next .wrap>div{display:grid;grid-template-columns:auto 1fr;column-gap:1.1rem;align-items:center;text-align:left;padding:1.9rem 1.7rem}
+.strip-next .wrap>div+div{border-left:1px solid var(--line-soft)}
+.strip-next .ic{grid-row:1/3;width:46px;height:46px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--gold);background:rgba(200,165,74,.06)}
+.strip-next .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.strip-next .wrap>div>b{font-size:clamp(1.3rem,1.9vw,1.75rem);white-space:normal;align-self:end}
+.strip-next .wrap>div>span{margin-top:.35rem;font-size:.66rem;align-self:start}
+.strip-next .cd{background:rgba(29,90,59,.2);box-shadow:inset 0 0 0 1px rgba(58,154,104,.35)}
+.strip-next .cd .ic{border-color:rgba(58,154,104,.55);color:var(--green);background:rgba(58,154,104,.1)}
+.strip-next .cd>b{display:flex;align-items:baseline;gap:.55rem;font-size:clamp(1.3rem,1.9vw,1.75rem)}
+.strip-next .cd>b #days{display:inline;font:600 clamp(2.4rem,3.8vw,3.3rem)/1 var(--serif);letter-spacing:0;text-transform:none;color:var(--gold);margin:0}
+.strip-next .cd>b small{font:500 .8rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft)}
 
 /* Velike panoramske fotografije unutar sekcija */
 .banner-photo{position:relative;margin:clamp(2rem,4vw,3.2rem) 0}
@@ -118,6 +133,7 @@ section{padding:clamp(5rem,10vw,8.5rem) 0;position:relative}
 .banner-fig::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,9,10,.7) 0%,transparent 35%);pointer-events:none}
 .banner-fig img{width:100%;height:clamp(240px,34vw,420px);object-fit:cover;object-position:center;transition:transform 1.2s var(--ease)}
 .banner-fig:hover img{transform:scale(1.025)}
+.banner-fig.natural img{height:auto;object-fit:initial}
 .banner-fig figcaption{position:absolute;left:1.5rem;bottom:1.2rem;font-size:.82rem;color:var(--gold-soft);letter-spacing:.05em;z-index:2;background:rgba(8,9,10,.82);padding:.4rem .9rem;border-left:1px solid var(--gold);backdrop-filter:blur(6px)}
 
 /* O nama */
@@ -294,6 +310,11 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   .strip .wrap{grid-template-columns:1fr 1fr}
   .strip div:nth-child(3){border-left:0}
   .strip div:nth-child(n+3){border-top:1px solid var(--line-soft)}
+  .strip-next{margin-top:-.5rem}
+  .strip-next .wrap>div:nth-child(3){border-left:0}
+  .strip-next .wrap>div:nth-child(n+3){border-top:1px solid var(--line-soft)}
+  .strip-next .wrap>div:nth-child(2){border-left:1px solid var(--line-soft)}
+  .strip-next .wrap>div:nth-child(4){border-left:1px solid var(--line-soft)}
   .section-with-side{grid-template-columns:1fr}
   .side-illust{position:static;margin:2.5rem auto 0;max-width:280px}
   .about,.feature,.barbara,.contact{grid-template-columns:1fr}
@@ -375,31 +396,25 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
 <div class="strip strip-next">
   <div class="wrap">
     <div class="rv">
+      <i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></i>
       <b id="nextSkokDate">5. prosinca 2026.</b>
       <span>Sljedeći Skok</span>
     </div>
     <div class="rv" style="--d:.1s">
+      <i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.2 2"/></svg></i>
       <b>19:00 h</b>
       <span>Vrijeme početka</span>
     </div>
     <div class="rv" style="--d:.2s">
+      <i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></i>
       <b>Hotel Westin</b>
       <span>Kristalna dvorana, Zagreb</span>
     </div>
-    <div class="rv" style="--d:.3s">
-      <b><span id="days">–</span> dana</b>
+    <div class="rv cd" style="--d:.3s">
+      <i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h11M6.5 20.5h11M7.5 3.5c0 4 4.5 5 4.5 8.5s-4.5 4.5-4.5 8.5M16.5 3.5c0 4-4.5 5-4.5 8.5s4.5 4.5 4.5 8.5"/></svg></i>
+      <b><span id="days">–</span><small>dana</small></b>
       <span>Odbrojavanje do Skoka</span>
     </div>
-  </div>
-</div>
-
-<!-- Traka 2: Povijesne crtice i tradicija -->
-<div class="strip">
-  <div class="wrap">
-    <div class="rv"><b>1939.</b><span>Prvi Skok u Zagrebu</span></div>
-    <div class="rv" style="--d:.1s"><b>1998.</b><span>Osnutak Udruge</span></div>
-    <div class="rv" style="--d:.2s"><b>4. XII.</b><span>Dan svete Barbare</span></div>
-    <div class="rv" style="--d:.3s"><b>XVII. st.</b><span>Pozdrav „Sretno!”</span></div>
   </div>
 </div>
 
@@ -409,7 +424,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     
     <!-- Slika pogled.jpg između naslova O Udruzi i Tko smo -->
     <div class="banner-photo rv">
-      <figure class="banner-fig">
+      <figure class="banner-fig natural">
         <img data-img src="images/pogled.jpg" alt="Članovi Udruge SRETNO! - pogled" loading="lazy" decoding="async">
         <figcaption>Zajedništvo i ponos generacija studenata Rudarsko-geološko-naftnog fakulteta</figcaption>
       </figure>
@@ -482,6 +497,16 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
         </div>
       </div>
     </div>
+
+    <!-- Povijesne crtice i tradicija -->
+    <div class="strip strip-inline rv">
+  <div class="wrap">
+    <div class="rv"><b>1939.</b><span>Prvi Skok u Zagrebu</span></div>
+    <div class="rv" style="--d:.1s"><b>1998.</b><span>Osnutak Udruge</span></div>
+    <div class="rv" style="--d:.2s"><b>4. XII.</b><span>Dan svete Barbare</span></div>
+    <div class="rv" style="--d:.3s"><b>XVII. st.</b><span>Pozdrav „Sretno!”</span></div>
+  </div>
+</div>
 
     <h3 class="sub rv">Tijek ceremonijala</h3>
     <div class="section-with-side">
@@ -561,8 +586,8 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     
     <!-- Slika pjev.jpg ispod naslova sekcije Rudarske pjesme -->
     <div class="banner-photo rv">
-      <figure class="banner-fig">
-        <img data-img src="images/pjev.jpg" alt="Pjesma i veselje ceremonijala Skoka" loading="lazy" decoding="async">
+      <figure class="banner-fig natural">
+        <img data-img src="images/pjev.jpeg" alt="Pjesma i veselje ceremonijala Skoka" loading="lazy" decoding="async">
         <figcaption>Rudarske pjesme odjekuju dvoranom pod ravnanjem Cantora</figcaption>
       </figure>
     </div>
@@ -858,10 +883,10 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   // Ažuriranje elemenata na stranici
   if($('#days')) $('#days').textContent = daysDiff;
   if($('#nextSkokDate')) $('#nextSkokDate').textContent = skok.dateStr;
-  if($('#heroYearSpan')) $('#heroYearSpan').textContent = skok.year + '.';
+  if($('#heroYearSpan')) $('#heroYearSpan').textContent = new Date().getFullYear() + '.';
   if($('#heroEdition')) $('#heroEdition').textContent = skok.roman + '. po redu';
   if($('#aboutNextSkok')) $('#aboutNextSkok').textContent = `${skok.roman}., ${skok.dateStr}`;
-  if($('#footerYear')) $('#footerYear').textContent = skok.year;
+  if($('#footerYear')) $('#footerYear').textContent = new Date().getFullYear();
   if($('#contactNextSkok')) {
     $('#contactNextSkok').innerHTML = `${skok.roman}. Skok preko kože<br>${skok.dateStr} u 19:00<br>Kristalna dvorana, Hotel Westin, Zagreb`;
   }
