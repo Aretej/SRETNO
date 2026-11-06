@@ -128,21 +128,27 @@ figcaption{font-size:.82rem;color:var(--mute);margin-top:1.4rem;padding-left:1re
 .pgrid b{display:block;font:600 1.5rem/1.2 var(--serif);color:var(--white);margin:.5rem 0 .6rem}
 .pgrid p{font-size:.88rem;color:var(--mute)}
 
-.tl{list-style:none;counter-reset:t;border-left:1px solid var(--line);margin:0 0 3rem .6rem;max-width:860px}
+/* Sekcije s bočnom ilustracijom */
+.section-with-side{display:grid;grid-template-columns:1fr 340px;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.side-illust{position:sticky;top:110px;display:flex;flex-direction:column;align-items:center}
+.side-illust img{width:100%;max-width:320px;height:auto;object-fit:contain;filter:drop-shadow(0 14px 30px rgba(0,0,0,.6));opacity:.95;transition:transform .5s var(--ease)}
+.side-illust img:hover{transform:scale(1.03)}
+
+.tl{list-style:none;counter-reset:t;border-left:1px solid var(--line);margin:0 0 1rem .6rem}
 .tl li{position:relative;padding:0 0 2.4rem 2.6rem}
 .tl li::before{counter-increment:t;content:counter(t,upper-roman);position:absolute;left:-1px;top:-.15rem;transform:translateX(-50%);min-width:2.5rem;height:2.5rem;padding:0 .3rem;display:grid;place-items:center;background:var(--bg2);border:1px solid var(--gold);color:var(--gold);font:600 .95rem var(--serif);border-radius:50%}
 .tl h4{font-size:1.5rem;margin:0 0 .5rem}
 .tl p{font-size:.97rem}
-.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
-.roles div{background:var(--bg2);padding:1.7rem}
-.roles h4{font-size:1.3rem;color:var(--gold);margin-bottom:.5rem}
-.roles p{font-size:.9rem;margin:0}
 
-.officers.wide dl{columns:2;column-gap:3rem}
-.officers.wide dl div{break-inside:avoid}
+/* Tko sudjeluje i Anatomija - usklađene kartice */
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.4rem;background:transparent;border:none}
+.roles div{background:var(--bg2);border:1px solid var(--line-soft);padding:1.8rem;transition:border-color .4s var(--ease),transform .4s var(--ease)}
+.roles div:hover{border-color:var(--line);transform:translateY(-3px)}
+.roles h4{font-size:1.3rem;color:var(--gold);margin-bottom:.5rem}
+.roles p{font-size:.9rem;margin:0;color:var(--text)}
 
 /* Pjesme */
-.songs{list-style:none;counter-reset:s;border-top:1px solid var(--line);max-width:860px}
+.songs{list-style:none;counter-reset:s;border-top:1px solid var(--line);width:100%}
 .songs li{display:grid;grid-template-columns:3.4rem 1fr;gap:1rem;padding:1.5rem 0;border-bottom:1px solid var(--line-soft)}
 .songs li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:500 1.15rem var(--serif);color:var(--gold);padding-top:.3rem}
 .songs h4{font-size:1.55rem;margin-bottom:.3rem}
@@ -159,8 +165,12 @@ figcaption{font-size:.82rem;color:var(--mute);margin-top:1.4rem;padding-left:1re
 .note{margin-top:2rem;padding:1.8rem;background:var(--bg3);border-left:1px solid var(--gold)}
 .note h4{font-size:1.35rem;color:var(--white);margin-bottom:.7rem}
 .note p{font-size:.95rem}
-.note.pic{display:grid;grid-template-columns:1fr minmax(0,36%);gap:1.6rem;align-items:start}
-.note.pic img{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}
+
+/* Slike s lijeve strane za Rude i Veliku Mlaku */
+.note.pic{display:grid;grid-template-columns:minmax(0,38%) 1fr;gap:2rem;align-items:start}
+.note-fig{margin:0}
+.note-fig img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line)}
+.note-fig figcaption{font-size:.8rem;color:var(--mute);margin-top:.65rem;padding-left:.8rem;border-left:1px solid var(--gold)}
 
 /* Događanja */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
@@ -250,6 +260,10 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   .menu a{display:block;padding:1rem 0}
   .rgnf div{display:none}
 }
+@media (max-width:1024px){
+  .section-with-side{grid-template-columns:1fr}
+  .side-illust{position:static;margin:2.5rem auto 0;max-width:280px}
+}
 @media (max-width:900px){
   .hero-grid,.about,.feature,.barbara,.contact{grid-template-columns:1fr}
   .officers{position:static}
@@ -259,7 +273,6 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   .strip div:nth-child(n+3){border-top:1px solid var(--line-soft)}
   figure::after{display:none}
   .barbara figure{max-width:420px}
-  .officers.wide dl{columns:1}
   .note.pic{grid-template-columns:1fr}
 }
 @media (max-width:560px){
@@ -380,6 +393,16 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
       </div>
     </div>
 
+    <!-- Anatomija skoka premještena odmah nakon Što je Skok -->
+    <h3 class="sub rv">Anatomija skoka</h3>
+    <div class="roles rv">
+      <div><h4>Skakač</h4><p>Brucoš koji skače s bačve.</p></div>
+      <div><h4>Držači kože</h4><p>Dvojica starijih članova Udruge koji drže kožu.</p></div>
+      <div><h4>Koža</h4><p>Komad kože u obliku pregače, nekad neophodan dio radne odjeće rudara i simbol njegova zanata.</p></div>
+      <div><h4>Bačva</h4><p>Postolje s kojeg brucoš skače preko kože.</p></div>
+    </div>
+    <p class="rv" style="margin-top:1.6rem;max-width:760px">Prije skoka brucoš odgovara na tri pitanja: kako se zove, zašto je upisao RGNF i koji je njegov životni moto.</p>
+
     <h3 class="sub rv">Podrijetlo i povijest</h3>
     <div class="feature" style="align-items:start">
       <div class="rv">
@@ -401,18 +424,52 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     </div>
 
     <h3 class="sub rv">Tijek ceremonijala</h3>
-    <ol class="tl">
-      <li class="rv"><h4>Potraga za Brucmajorom</h4><p>Dva do tri sata prije početka ceremonijala brucoši se okupljaju na fakultetu, odjeveni u tradicionalne uniforme, s rudarskim svjetiljkama i kacigama. Pod vodstvom svojih Noblbruca obilaze grad, pjevaju rudarske pjesme i traže <strong>Brucmajora</strong>, iskusnog i cijenjenog rudara koji će ih povesti na svečanost. Kada ga pronađu, ponizno ga mole da ih povede. On isprva negoduje jer se boji da će tako narušiti svoj ugled, no na kraju, osvojen pjesmom, pristaje i traži njihovu apsolutnu poslušnost.</p></li>
-      <li class="rv"><h4>Pozdrav Praesidiumu</h4><p>U dvorani su već stare bajte, stariji studenti primljeni u rudarski stalež, te inženjeri i profesori. Pjesmom „Hoćemo Praesidium” traže da <em>slavni, časni, visoki i nepogrešivi Praesidium</em> preuzme vlast nad ceremonijalom. Praesidium, osoba kojoj je povjerena apsolutna vlast, pojavljuje se, uspostavlja red i određuje ostale funkcije: svoje pobočnike Adlatus Sinistera i Adlatus Dextera te voditelje kontrarijskih tablica, Contrapic Sinistera i Contrapic Dextera.</p></li>
-      <li class="rv"><h4>Gaudeamus igitur i referati</h4><p>Praesidium naređuje da se otpjeva internacionalna studentska himna „Gaudeamus igitur”, a Contrapici podnose referate o stanju i vladanju svojih bajti.</p></li>
-      <li class="rv"><h4>Dolazak brucoša</h4><p>Brucmajor moli dopuštenje da uvede brucoše koji žele biti primljeni u rudarski stalež. Praesidium ga „milostivo” odobrava, a brucoši u svečanoj povorci ulaze u dvoranu. Na zahtjev Contrapica Dextera otpjeva se rudarska himna „Sretno”, ujedno himna RGN fakulteta.</p></li>
-      <li class="rv"><h4>Ispit</h4><p>Stare bajte postavljaju brucošima razna pitanja kako bi provjerile njihovo znanje i zrelost. Nekada su to bila obilježena stručna pitanja, a danas su to uglavnom duhovite dosjetke.</p></li>
-      <li class="rv"><h4>Najava Skoka</h4><p>Praesidium najavljuje Skok i naređuje Brucmajoru da povede brucoše, koje prate njihovi „kumovi”.</p></li>
-      <li class="rv"><h4>Predstavljanje i geslo</h4><p>Prije skakanja brucoš se predstavlja okupljenoj rudarskoj zajednici i navodi svoje geslo, obično duhovitu dosjetku koja će ga pratiti u radu. Nekada su to bila prava životna gesla, ali su s vremenom u studentskom miljeu poprimila druge nijanse.</p></li>
-      <li class="rv"><h4>Skok preko kože</h4><p>Brucoši skaču s bačve preko kože koju drže dvojica uvaženih starijih rudara i tako se simbolički primaju u rudarski stalež.</p></li>
-      <li class="rv"><h4>Završetak ceremonijala</h4><p>Slijedi ispijanje krigli te pjesme „Sa tornja” i „Jamari”, a zatim pjesma „Hoćemo republiku”. Praesidium najavljuje „Habetis rem publicam”, a svi pjevaju „Živjela republika”, čime ceremonijal završava.</p></li>
-    </ol>
-    <p class="rv" style="max-width:760px">Ceremonijal traje oko sat i trideset minuta, a uzvanici sjede u dvorani. Tijekom ceremonijala dopušteno je piti samo prema scenariju priredbe. Nakon ceremonijala slijede svečana večera i rudarski ples, na kojima mlade bajte zajedno sa starim bajtama slave do dugo u noć.</p>
+    <div class="section-with-side">
+      <div>
+        <ol class="tl">
+          <li class="rv">
+            <h4>Potraga za Brucmajorom</h4>
+            <p>Dva do tri sata prije početka ceremonijala brucoši se okupljaju na fakultetu, odjeveni u tradicionalne uniforme, s rudarskim svjetiljkama i kacigama. Pod vodstvom svojih Noblbruca obilaze grad, pjevaju rudarske pjesme i traže <strong>Brucmajora</strong>, iskusnog i cijenjenog rudara koji će ih povesti na svečanost. Ako brucoši zabrljaju u ispunjavanju svojih dužnosti i zadataka Brucmajor ili stare bajte mogu ih točiti mlijekom kao vidom kazne. Kada ga pronađu, ponizno ga mole da ih povede. On isprva negoduje jer se boji da će tako narušiti svoj ugled, no na kraju, osvojen pjesmom, pristaje i traži njihovu apsolutnu poslušnost.</p>
+          </li>
+          <li class="rv">
+            <h4>Pozdrav Praesidiumu</h4>
+            <p>U dvorani su već stare bajte, stariji studenti primljeni u rudarski stalež, te inženjeri i profesori. Pjesmom „Hoćemo Praesidium” traže da <em>slavni, časni, visoki i nepogrešivi Praesidium</em> preuzme vlast nad ceremonijalom. Praesidium, osoba kojoj je povjerena apsolutna vlast, pojavljuje se, uspostavlja red i određuje ostale funkcije: svoje pobočnike Adlatus Sinistera i Adlatus Dextera te voditelje kontrarijskih tablica, Contrapic Sinistera i Contrapic Dextera.</p>
+          </li>
+          <li class="rv">
+            <h4>Gaudeamus igitur i referati</h4>
+            <p>Praesidium naređuje da se otpjeva internacionalna studentska himna „Gaudeamus igitur”, a Contrapici podnose referate o stanju i vladanju svojih bajti.</p>
+          </li>
+          <li class="rv">
+            <h4>Dolazak brucoša</h4>
+            <p>Brucmajor moli dopuštenje da uvede brucoše koji žele biti primljeni u rudarski stalež. Praesidium ga „milostivo” odobrava, a brucoši u svečanoj povorci ulaze u dvoranu. Na zahtjev Contrapica Dextera otpjeva se rudarska himna „Sretno”, ujedno himna RGN fakulteta.</p>
+          </li>
+          <li class="rv">
+            <h4>Ispit</h4>
+            <p>Stare bajte postavljaju brucošima razna pitanja kako bi provjerile njihovo znanje i zrelost. Nekada su to bila obilježena stručna pitanja, a danas su to uglavnom duhovite dosjetke.</p>
+          </li>
+          <li class="rv">
+            <h4>Najava Skoka</h4>
+            <p>Praesidium najavljuje Skok i naređuje Brucmajoru da povede brucoše, koje prate njihovi „kumovi”.</p>
+          </li>
+          <li class="rv">
+            <h4>Predstavljanje i geslo</h4>
+            <p>Prije skakanja brucoš se predstavlja okupljenoj rudarskoj zajednici i navodi svoje geslo, obično duhovitu dosjetku koja će ga pratiti u radu. Nekada su to bila prava životna gesla, ali su s vremenom u studentskom miljeu poprimila druge nijanse.</p>
+          </li>
+          <li class="rv">
+            <h4>Skok preko kože</h4>
+            <p>Brucoši skaču s bačve preko kože koju drže dvojica uvaženih starijih rudara i tako se simbolički primaju u rudarski stalež.</p>
+          </li>
+          <li class="rv">
+            <h4>Završetak ceremonijala</h4>
+            <p>Slijedi ispijanje krigli te pjesme „Sa tornja” i „Jamari”, a zatim pjesma „Hoćemo republiku”. Praesidium najavljuje „Habetis rem publicam”, a svi pjevaju „Živjela republika”, čime ceremonijal završava.</p>
+          </li>
+        </ol>
+        <p class="rv" style="max-width:760px">Ceremonijal traje oko sat i trideset minuta, a uzvanici sjede u dvorani. Tijekom ceremonijala dopušteno je piti samo prema scenariju priredbe. Nakon ceremonijala slijede svečana večera i rudarski ples, na kojima mlade bajte zajedno sa starim bajtama slave do dugo u noć.</p>
+      </div>
+      <aside class="side-illust rv" style="--d:.2s">
+        <img data-img src="images/večera_2.png" alt="Zajedništvo i večera Skoka preko kože" loading="lazy" decoding="async">
+      </aside>
+    </div>
 
     <h3 class="sub rv">Tko sudjeluje</h3>
     <div class="roles rv">
@@ -425,15 +482,6 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     </div>
     <p class="rv" style="margin-top:1.6rem;max-width:760px">Na Skok se zovu i gosti: studenti sa srodnih fakulteta iz Hrvatske i inozemstva, bivši i sadašnji članovi fakulteta te predstavnici tvrtki, ministarstava i znanstvenih institucija. Na Skoku se redovito okuplja oko 400 uzvanika.</p>
 
-    <h3 class="sub rv">Anatomija skoka</h3>
-    <div class="roles rv">
-      <div><h4>Skakač</h4><p>Brucoš koji skače s bačve.</p></div>
-      <div><h4>Držači kože</h4><p>Dvojica starijih članova Udruge koji drže kožu.</p></div>
-      <div><h4>Koža</h4><p>Komad kože u obliku pregače, nekad neophodan dio radne odjeće rudara i simbol njegova zanata.</p></div>
-      <div><h4>Bačva</h4><p>Postolje s kojeg brucoš skače preko kože.</p></div>
-    </div>
-    <p class="rv" style="margin-top:1.6rem;max-width:760px">Prije skoka brucoš odgovara na tri pitanja: kako se zove, zašto je upisao RGNF i koji je njegov životni moto.</p>
-
     <div class="patrons rv">
       <h3>Pokrovitelji</h3>
       <p>Kontinuitet i značaj Skoka potvrđuje podrška najviših državnih i gradskih institucija. Pokrovitelji nadolazećeg Skoka bit će objavljeni naknadno. Pokrovitelji prethodnog, XXXV. Skoka održanog 6. prosinca 2024., bili su:</p>
@@ -444,25 +492,6 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
       </div>
       <p style="margin-top:1.8rem;font-size:.92rem">Kroz povijest su visoki pokrovitelji bili predsjednici Republike Hrvatske Franjo Tuđman, Stjepan Mesić, Ivo Josipović, Kolinda Grabar-Kitarović i Zoran Milanović.</p>
     </div>
-
-    <div class="officers wide rv" style="margin-top:3rem;position:static">
-      <h3>Funkcije XXXV. Skoka</h3>
-      <dl>
-        <div><dt>Praesidium</dt><dd>Matko Žbulj</dd></div>
-        <div><dt>Adlatus Dexter</dt><dd>Tomislav Ovčarić</dd></div>
-        <div><dt>Adlatus Sinister</dt><dd>Stefanie Jurić</dd></div>
-        <div><dt>Contrapic Dexter</dt><dd>Tomislav Đidara</dd></div>
-        <div><dt>Contrapic Sinister</dt><dd>David Aščić</dd></div>
-        <div><dt>Cantor</dt><dd>Davor Dropuljić</dd></div>
-        <div><dt>Brucmajor</dt><dd>Toni Vlahović</dd></div>
-        <div><dt>Noblbruc Primus</dt><dd>Ivan Pucak</dd></div>
-        <div><dt>Noblbruc Secundus</dt><dd>Jure Salacan</dd></div>
-        <div><dt>Držači kože</dt><dd>prof. dr. sc. Zvonimir Ester i prof. dr. sc. Boris Kavedžija</dd></div>
-        <div><dt>Predsjednica Odbora</dt><dd>Josipa Babić</dd></div>
-        <div><dt>Predsjednik Udruge</dt><dd>Filip Božić, mag. ing. petrol.</dd></div>
-      </dl>
-      <p style="margin:1.4rem 0 0;font-size:.88rem;color:var(--mute)">Funkcionari XXXVI. Skoka bit će objavljeni nakon završetka priprema.</p>
-    </div>
   </div>
 </section>
 
@@ -470,18 +499,26 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   <div class="wrap">
     <div class="sec-head rv"><span class="no">03</span><span class="eyebrow">Glazba ceremonijala</span><h2>Rudarske pjesme</h2></div>
     <p class="rv" style="max-width:760px;margin-bottom:2.6rem">Skok je od prvog do posljednjeg trenutka ispunjen pjesmom. Glazbeni dio vodi Cantor, a okupljeni pjevaju iz Rudarske pjesmarice Udruge „Sretno!” (Zagreb, 2006.). Pjesmarica sadrži devet pjesama, a svaka ima svoje mjesto u večeri.</p>
-    <ol class="songs">
-      <li class="rv"><div><h4>Pjesma za Praesidium</h4><p>Njome stare bajte na početku svečanosti traže da Praesidium preuzme vlast nad ceremonijalom.</p></div></li>
-      <li class="rv"><div><h4>Gaudeamus igitur</h4><p>Internacionalna studentska himna na latinskom jeziku, koja se pjeva nakon što Praesidium uspostavi red u dvorani.</p></div></li>
-      <li class="rv"><div><h4>Rudarska himna</h4><p>Himna rudara, u ceremonijalu poznata kao himna „Sretno”, ujedno himna RGN fakulteta. Izvodi se pri dolasku brucoša.</p></div></li>
-      <li class="rv"><div><h4>Pjesma ophodara</h4><p>Pjevaju je brucoši dok obilaze grad u potrazi za Brucmajorom.</p></div></li>
-      <li class="rv"><div><h4>Sa tornja</h4><p>Pjesma koja se pjeva nakon skoka uz ispijanje krigli.</p></div></li>
-      <li class="rv"><div><h4>Jamari</h4><p>Razigrana pjesma koja se pjeva nakon skoka, uz ispijanje krigli.</p></div></li>
-      <li class="rv"><div><h4>Sa smjene na smjenu</h4><p>Pjesma o studentskim danima, ispitima i trenutku kada se skokom prelazi u rudarski stalež.</p></div></li>
-      <li class="rv"><div><h4>Sretno!</h4><p>Razigrana zdravica rudarima, s pozdravom koji je ujedno i ime Udruge.</p></div></li>
-      <li class="rv"><div><h4>Završetak ceremonijala</h4><p>Završna pjesma „Hoćemo republiku”: nakon što Praesidium najavi „Habetis rem publicam”, svi otpjevaju „Živjela republika”.</p></div></li>
-    </ol>
-    <p class="rv" style="margin-top:2rem;font-size:.9rem;color:var(--mute)">Tekstovi pjesama nalaze se u Rudarskoj pjesmarici Udruge „Sretno!”.</p>
+    
+    <div class="section-with-side">
+      <div>
+        <ol class="songs">
+          <li class="rv"><div><h4>Pjesma za Praesidium</h4><p>Njome stare bajte na početku svečanosti traže da Praesidium preuzme vlast nad ceremonijalom.</p></div></li>
+          <li class="rv"><div><h4>Gaudeamus igitur</h4><p>Internacionalna studentska himna na latinskom jeziku, koja se pjeva nakon što Praesidium uspostavi red u dvorani.</p></div></li>
+          <li class="rv"><div><h4>Rudarska himna</h4><p>Himna rudara, u ceremonijalu poznata kao himna „Sretno”, ujedno himna RGN fakulteta. Izvodi se pri dolasku brucoša.</p></div></li>
+          <li class="rv"><div><h4>Pjesma ophodara</h4><p>Pjevaju je brucoši dok obilaze grad u potrazi za Brucmajorom.</p></div></li>
+          <li class="rv"><div><h4>Sa tornja</h4><p>Pjesma koja se pjeva nakon skoka uz ispijanje krigli.</p></div></li>
+          <li class="rv"><div><h4>Jamari</h4><p>Razigrana pjesma koja se pjeva nakon skoka, uz ispijanje krigli.</p></div></li>
+          <li class="rv"><div><h4>Sa smjene na smjenu</h4><p>Pjesma o studentskim danima, ispitima i trenutku kada se skokom prelazi u rudarski stalež.</p></div></li>
+          <li class="rv"><div><h4>Sretno!</h4><p>Razigrana zdravica rudarima, s pozdravom koji je ujedno i ime Udruge.</p></div></li>
+          <li class="rv"><div><h4>Završetak ceremonijala</h4><p>Završna pjesma „Hoćemo republiku”: nakon što Praesidium najavi „Habetis rem publicam”, svi otpjevaju „Živjela republika”.</p></div></li>
+        </ol>
+        <p class="rv" style="margin-top:2rem;font-size:.9rem;color:var(--mute)">Tekstovi pjesama nalaze se u Rudarskoj pjesmarici Udruge „Sretno!”.</p>
+      </div>
+      <aside class="side-illust rv" style="--d:.2s">
+        <img data-img src="images/surfer_2.png" alt="Studentski duh i tradicija" loading="lazy" decoding="async">
+      </aside>
+    </div>
   </div>
 </section>
 
@@ -500,12 +537,31 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
         </ul>
         <p>Zbog nepokolebljive vjere pretrpjela je mučeništvo. Poginula je za svoju vjeru 306. godine, u 28. godini života, što je razlog zašto je časna rudarska uniforma ukrašena s 28 zlatnih gumbi. Predaja bilježi da je njezina oca potom pogodila munja s vedrog neba, pa se sveta Barbara zaziva protiv groma, požara i iznenadnih pogibelji u tami podzemlja.</p>
         <p>Njezine se relikvije čuvaju na više mjesta: prema zapadnim izvorima, oko 1000. godine prenesene su u baziliku svetog Marka u Veneciji, a u Hrvatskoj se u crkvi svetog Blaža u Vodnjanu, u Istri, među 370 posmrtnih ostataka od oko 250 svetaca nalazi i stopalo svete Barbare.</p>
-        <div class="note pic"><div><h4>Rudnik sv. Barbare u Rudama</h4>
-          <p>U Rudama kraj Samobora rudari su još u 16. stoljeću vadili bakar i željezo. Danas je ondje obnovljeni turistički rudnik sv. Barbare, zaštićeno kulturno dobro Republike Hrvatske, kojim upravlja KUD Oštrc. Svake godine 4. prosinca održava se večernja misa za sve pokojne rudare, nakon koje se procesija s kipom svete Barbare kreće od crkve do Rudnika, a ispred njega se izvode obredni plesovi, i to samo jednom godišnje, na blagdan zaštitnice rudara. Tom se manifestacijom Rudnik simbolički zatvara za posjetitelje do prvog dana proljeća. Priprema <em>Rudarske greblice</em>, tradicionalnog rudarskog kolača, nalazi se na popisu nematerijalne kulturne baštine. Članovi Udruge sudjelovali su u manifestaciji 2016. godine, predstavljajući dio Skoka preko kože. Više informacija: <a href="http://www.rudnik.hr" target="_blank" rel="noopener noreferrer">www.rudnik.hr</a>.</p>
-        </div><img data-img src="images/rudnik.jpg" alt="Rudnik sv. Barbare u Rudama" loading="lazy" decoding="async"></div>
-        <div class="note pic"><div><h4>Svetišta svete Barbare</h4>
-          <p>Najviše rimokatoličkih župa koje nose ime svete Barbare u Hrvatskoj nalazi se u Zagrebačkoj nadbiskupiji: Carevdar, Rude, Zagreb-Rebro, Zagreb-Vrapče i Velika Mlaka. U Velikoj Mlaki stoji kapela iz 1642., najreprezentativniji primjer baroknog drvenog sakralnog graditeljstva sjeverne Hrvatske, građena od turopoljske hrastovine. Njezin glavni krilni ranobarokni oltar s dvanaest prizora potječe iz 1679. godine.</p>
-        </div><img data-img src="images/crkva.jpg" alt="Crkva svete Barbare u Velikoj Mlaki" loading="lazy" decoding="async"></div>
+        
+        <!-- Rudnik sv. Barbare - slika s lijeve strane i opis -->
+        <div class="note pic">
+          <figure class="note-fig">
+            <img data-img src="images/rudnik.jpg" alt="Rudnik sv. Barbare u Rudama" loading="lazy" decoding="async">
+            <figcaption>Rudnik sv. Barbare u Rudama</figcaption>
+          </figure>
+          <div>
+            <h4>Rudnik sv. Barbare u Rudama</h4>
+            <p>U Rudama kraj Samobora rudari su još u 16. stoljeću vadili bakar i željezo. Danas je ondje obnovljeni turistički rudnik sv. Barbare, zaštićeno kulturno dobro Republike Hrvatske, kojim upravlja KUD Oštrc. Svake godine 4. prosinca održava se večernja misa za sve pokojne rudare, nakon koje se procesija s kipom svete Barbare kreće od crkve do Rudnika, a ispred njega se izvode obredni plesovi, i to samo jednom godišnje, na blagdan zaštitnice rudara. Tom se manifestacijom Rudnik simbolički zatvara za posjetitelje do prvog dana proljeća. Priprema <em>Rudarske greblice</em>, tradicionalnog rudarskog kolača, nalazi se na popisu nematerijalne kulturne baštine. Članovi Udruge sudjelovali su u manifestaciji 2016. godine, predstavljajući dio Skoka preko kože. Više informacija: <a href="http://www.rudnik.hr" target="_blank" rel="noopener noreferrer">www.rudnik.hr</a>.</p>
+          </div>
+        </div>
+
+        <!-- Svetišta svete Barbare - slika s lijeve strane i opis -->
+        <div class="note pic">
+          <figure class="note-fig">
+            <img data-img src="images/crkva.jpg" alt="Crkva svete Barbare u Velikoj Mlaki" loading="lazy" decoding="async">
+            <figcaption>Crkva svete Barbare u Velikoj Mlaki</figcaption>
+          </figure>
+          <div>
+            <h4>Svetišta svete Barbare</h4>
+            <p>Najviše rimokatoličkih župa koje nose ime svete Barbare u Hrvatskoj nalazi se u Zagrebačkoj nadbiskupiji: Carevdar, Rude, Zagreb-Rebro, Zagreb-Vrapče i Velika Mlaka. U Velikoj Mlaki stoji kapela iz 1642., najreprezentativniji primjer baroknog drvenog sakralnog graditeljstva sjeverne Hrvatske, građena od turopoljske hrastovine. Njezin glavni krilni ranobarokni oltar s dvanaest prizora potječe iz 1679. godine.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -586,7 +642,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   </div>
 </section>
 
-<!-- Novi poboljšani Lightbox za listanje albuma -->
+<!-- Lightbox za listanje albuma -->
 <dialog id="lb" aria-label="Pregled galerije fotografija">
   <button class="close-btn" id="lbClose">Zatvori (ESC)</button>
   <div class="lb-box">
@@ -728,7 +784,8 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   }
 
   const skok = resolveNextSkok();
-  const daysDiff = Math.max(0, Math.ceil((skok.date.getTime() - Date.now()) / 864e5));
+  // Koristimo Math.floor kako bi prikazivao puni broj preostalih dana (npr. 29 dana umjesto zaokruživanja na 30)
+  const daysDiff = Math.max(0, Math.floor((skok.date.getTime() - Date.now()) / (1000 * 60 * 60 * 24)));
 
   // Ažuriranje elemenata na stranici
   if($('#days')) $('#days').textContent = daysDiff;
@@ -748,8 +805,16 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     33: { title: 'XXXIII. Skok preko kože (2018.)', count: 23, folder: '33%20skok/' }
   };
 
-  let curAlbum = null, curIdx = 1;
+  let curAlbum = null, curIdx = 1, currentAlbumId = null;
   const lb = $('#lb'), lbImg = $('#lbImg'), lbCap = $('#lbCap'), lbCount = $('#lbCount');
+
+  function getImgSrc(albumId, idx){
+    // Za 35 skok slike 19 i 20 imaju ekstenziju .jpeg
+    if(albumId === 35 && (idx === 19 || idx === 20)){
+      return `35%20skok/${idx}.jpeg`;
+    }
+    return `${albums[albumId].folder}${idx}.jpg`;
+  }
 
   function showImage(idx){
     if(!curAlbum) return;
@@ -757,12 +822,13 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     if(idx > curAlbum.count) idx = 1;
     curIdx = idx;
 
-    lbImg.src = `${curAlbum.folder}${curIdx}.jpg`;
+    lbImg.src = getImgSrc(currentAlbumId, curIdx);
     lbCap.textContent = `${curAlbum.title} — fotografija ${curIdx}`;
     lbCount.textContent = `${curIdx} / ${curAlbum.count}`;
   }
 
   window.openAlbum = (id)=>{
+    currentAlbumId = id;
     curAlbum = albums[id];
     showImage(1);
     lb.showModal();
