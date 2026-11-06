@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Udruga SRETNO! | XXXVI. Skok preko kože, Zagreb 2026.</title>
+<title>Udruga SRETNO! | Rudarsko-geološko-naftni fakultet, Zagreb</title>
 <meta name="description" content="Službena stranica Udruge SRETNO! Rudarsko-geološko-naftnog fakulteta Sveučilišta u Zagrebu. Čuvari rudarske tradicije i ceremonijala Skok preko kože od 1939. godine.">
 <meta name="theme-color" content="#08090a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,15 +78,17 @@ section{padding:clamp(5rem,10vw,8.5rem) 0;position:relative}
 .btn-solid:hover{background:var(--gold-soft);border-color:var(--gold-soft);color:#0a0a09}
 .btn-line{background:transparent;color:var(--white);border-color:var(--line-soft)}
 .btn-line:hover{border-color:var(--green);color:var(--white)}
-.crest{border:1px solid var(--line);padding:clamp(1.8rem,3vw,2.8rem);background:linear-gradient(180deg,rgba(255,255,255,.025),transparent);text-align:center;position:relative}
-.crest::before{content:'';position:absolute;inset:9px;border:1px solid var(--line-soft);pointer-events:none}
-.crest img{width:min(210px,60%);margin:0 auto 1.6rem;border-radius:50%}
-.crest h3{font-size:1.7rem;color:var(--gold);letter-spacing:.06em}
-.crest p{font-size:.88rem;color:var(--mute);margin:.4rem 0 1.8rem}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-soft);padding-top:1.4rem}
-.stats div+div{border-left:1px solid var(--line-soft)}
-.stats b{display:block;font:600 2.3rem/1 var(--serif);color:var(--white)}
-.stats span{display:block;font:400 .62rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:.55rem}
+
+/* Kartica nadolazećeg događaja */
+.event{border:1px solid var(--line);padding:clamp(1.8rem,3vw,2.8rem);position:relative;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent)}
+.event::before{content:'';position:absolute;inset:9px;border:1px solid var(--line-soft);pointer-events:none}
+.event h3{font-size:clamp(2.1rem,3.6vw,3rem);color:var(--gold);margin:.9rem 0 1.4rem}
+.event dl div{display:flex;justify-content:space-between;gap:1.2rem;padding:.85rem 0;border-top:1px solid var(--line-soft);font-size:.92rem}
+.event dt{color:var(--mute);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;padding-top:.15rem}
+.event dd{color:var(--white);text-align:right}
+.count{margin-top:1.2rem;padding-top:1.4rem;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:.9rem}
+.count b{font:600 3.2rem/1 var(--serif);color:var(--white)}
+.count span{font:400 .7rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
 
 /* Traka */
 .strip{border-block:1px solid var(--line)}
@@ -118,13 +120,6 @@ figure::after{content:'';position:absolute;inset:14px -14px -14px 14px;border:1p
 figcaption{font-size:.82rem;color:var(--mute);margin-top:1.4rem;padding-left:1rem;border-left:1px solid var(--gold)}
 .feature h3{font-size:clamp(2rem,3.4vw,2.8rem);color:var(--gold);margin-bottom:1.4rem}
 .sub{font-size:clamp(1.7rem,3vw,2.3rem);color:var(--white);text-align:center;margin:clamp(4rem,8vw,6.5rem) 0 2.6rem}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line-soft)}
-.step{padding:2.4rem 2rem;transition:background .5s var(--ease)}
-.step+.step{border-left:1px solid var(--line-soft)}
-.step:hover{background:var(--bg3)}
-.step .n{font:500 3rem/1 var(--serif);font-style:italic;color:var(--gold);display:block;margin-bottom:1.2rem}
-.step h4{font-size:1.45rem;margin-bottom:.8rem}
-.step p{font-size:.95rem}
 .patrons{margin-top:clamp(4rem,8vw,6rem);padding:clamp(2rem,4vw,3.4rem);border:1px solid var(--line)}
 .patrons>h3{font-size:2rem;margin-bottom:.5rem}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.2rem}
@@ -132,10 +127,26 @@ figcaption{font-size:.82rem;color:var(--mute);margin-top:1.4rem;padding-left:1re
 .pgrid small{font:500 .66rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--green);display:block}
 .pgrid b{display:block;font:600 1.5rem/1.2 var(--serif);color:var(--white);margin:.5rem 0 .6rem}
 .pgrid p{font-size:.88rem;color:var(--mute)}
-.protocol{margin-top:3rem}
-.protocol h4{font-size:1.5rem;color:var(--gold);margin-bottom:1.2rem}
-blockquote{padding:1.1rem 1.6rem;border-left:1px solid var(--green);margin-bottom:.9rem;background:rgba(255,255,255,.02);font-size:.97rem}
-blockquote strong{display:block;font:500 .66rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.3rem}
+
+.tl{list-style:none;counter-reset:t;border-left:1px solid var(--line);margin:0 0 3rem .6rem;max-width:860px}
+.tl li{position:relative;padding:0 0 2.4rem 2.6rem}
+.tl li::before{counter-increment:t;content:counter(t,upper-roman);position:absolute;left:-1px;top:-.15rem;transform:translateX(-50%);min-width:2.5rem;height:2.5rem;padding:0 .3rem;display:grid;place-items:center;background:var(--bg2);border:1px solid var(--gold);color:var(--gold);font:600 .95rem var(--serif);border-radius:50%}
+.tl h4{font-size:1.5rem;margin:0 0 .5rem}
+.tl p{font-size:.97rem}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+.roles div{background:var(--bg2);padding:1.7rem}
+.roles h4{font-size:1.3rem;color:var(--gold);margin-bottom:.5rem}
+.roles p{font-size:.9rem;margin:0}
+
+.officers.wide dl{columns:2;column-gap:3rem}
+.officers.wide dl div{break-inside:avoid}
+
+/* Pjesme */
+.songs{list-style:none;counter-reset:s;border-top:1px solid var(--line);max-width:860px}
+.songs li{display:grid;grid-template-columns:3.4rem 1fr;gap:1rem;padding:1.5rem 0;border-bottom:1px solid var(--line-soft)}
+.songs li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:500 1.15rem var(--serif);color:var(--gold);padding-top:.3rem}
+.songs h4{font-size:1.55rem;margin-bottom:.3rem}
+.songs p{font-size:.95rem;margin:0}
 
 /* Sveta Barbara */
 .barbara{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,5rem);align-items:start}
@@ -148,6 +159,8 @@ blockquote strong{display:block;font:500 .66rem var(--sans);letter-spacing:.2em;
 .note{margin-top:2rem;padding:1.8rem;background:var(--bg3);border-left:1px solid var(--gold)}
 .note h4{font-size:1.35rem;color:var(--white);margin-bottom:.7rem}
 .note p{font-size:.95rem}
+.note.pic{display:grid;grid-template-columns:1fr minmax(0,36%);gap:1.6rem;align-items:start}
+.note.pic img{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}
 
 /* Događanja */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
@@ -156,30 +169,40 @@ blockquote strong{display:block;font:500 .66rem var(--sans);letter-spacing:.2em;
 .card .ph{aspect-ratio:16/10;overflow:hidden;background:var(--bg3);display:grid;place-items:center}
 .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .card:hover .ph img{transform:scale(1.04)}
-.card .ph.logo img{width:auto;height:62%;object-fit:contain}
 .card .tx{padding:1.8rem;display:flex;flex-direction:column;flex:1}
 .card h3{font-size:1.55rem;margin:.7rem 0 .5rem}
 .card .where{font-size:.76rem;color:var(--gold);letter-spacing:.08em;margin-bottom:1rem}
 .card p{font-size:.93rem}
 
-/* Galerija */
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.g{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:zoom-in;background:var(--bg3);border:0;padding:0;display:block;width:100%;text-align:left;color:inherit}
-.g img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),filter .8s}
-.g.emblem img{object-fit:contain;width:62%;height:62%;margin:auto;position:absolute;inset:0}
-.g::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,9,10,.88),transparent 55%);opacity:.9;transition:opacity .5s}
-.g:hover img{transform:scale(1.05)}
-.g .cap{position:absolute;left:1.3rem;right:1.3rem;bottom:1.1rem;z-index:2;transform:translateY(6px);transition:transform .5s var(--ease)}
-.g:hover .cap{transform:none}
-.g .cap b{font:600 1.3rem/1.2 var(--serif);color:var(--white);display:block}
-.g .cap span{font-size:.78rem;color:var(--text);display:block;margin-top:.2rem}
-dialog{border:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;color:var(--text)}
-dialog::backdrop{background:rgba(4,5,5,.94)}
-dialog[open]{display:grid;place-items:center;animation:fade .4s var(--ease)}
-.lb{max-width:min(1000px,92vw);text-align:center}
-.lb img{max-height:78vh;margin:0 auto;border:1px solid var(--line)}
-.lb p{font-size:.9rem;margin-top:1rem}
-.close{position:fixed;top:1.4rem;right:1.6rem;background:none;border:1px solid var(--line);color:var(--gold);font:500 .66rem var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:.7rem 1.1rem;cursor:pointer}
+/* Kompaktna Galerija (Albumi) */
+.album-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+.album-card{background:var(--bg2);border:1px solid var(--line-soft);position:relative;cursor:pointer;overflow:hidden;transition:border-color .4s var(--ease),transform .4s var(--ease);text-align:left;display:flex;flex-direction:column}
+.album-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.album-cover{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg3)}
+.album-cover img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.album-card:hover .album-cover img{transform:scale(1.06)}
+.album-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,9,10,.82) 0%,transparent 60%)}
+.album-badge{position:absolute;top:1rem;right:1rem;background:rgba(8,9,10,.85);border:1px solid var(--line);color:var(--gold);font:500 .68rem var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:.35rem .75rem;backdrop-filter:blur(6px);z-index:2}
+.album-content{padding:1.6rem 1.4rem;display:flex;flex-direction:column;gap:.4rem;flex:1;justify-content:space-between;border-top:1px solid var(--line-soft)}
+.album-content h3{font-size:1.45rem;color:var(--white)}
+.album-content .action{font:500 .72rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.5rem;margin-top:.6rem}
+
+/* Lightbox preglednik */
+dialog#lb{border:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;color:var(--text);padding:0}
+dialog#lb::backdrop{background:rgba(4,5,5,.96);backdrop-filter:blur(10px)}
+dialog#lb[open]{display:grid;place-items:center;animation:fade .35s var(--ease)}
+.lb-box{position:relative;width:min(1100px,94vw);max-height:92vh;display:flex;flex-direction:column;align-items:center}
+.lb-viewport{position:relative;display:flex;align-items:center;justify-content:center;width:100%}
+.lb-viewport img{max-height:74vh;max-width:100%;object-fit:contain;border:1px solid var(--line);background:#050606;box-shadow:0 12px 40px rgba(0,0,0,.8)}
+.lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(8,9,10,.85);border:1px solid var(--line);color:var(--gold);width:50px;height:50px;border-radius:50%;display:grid;place-items:center;cursor:pointer;font-size:1.8rem;transition:all .3s var(--ease);user-select:none;z-index:10}
+.lb-btn:hover{background:var(--gold);color:#08090a;border-color:var(--gold)}
+.lb-prev{left:12px}
+.lb-next{right:12px}
+.lb-footer{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:1rem;padding-inline:.5rem}
+.lb-footer p{font-size:.95rem;color:var(--white);font-weight:400}
+.lb-counter{font:500 .72rem var(--sans);letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.close-btn{position:fixed;top:1.4rem;right:1.6rem;background:rgba(8,9,10,.85);border:1px solid var(--line);color:var(--gold);font:500 .68rem var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:.7rem 1.2rem;cursor:pointer;transition:all .3s var(--ease);z-index:20}
+.close-btn:hover{background:var(--gold);color:#08090a}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 
 /* Kontakt */
@@ -211,44 +234,6 @@ footer{padding:4rem 0 3rem;border-top:1px solid var(--line);text-align:center}
 footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04em}
 .missing{visibility:hidden}
 
-
-/* Skok 2026, vremenska crta, uloge, pjesme */
-.event{border:1px solid var(--line);padding:clamp(1.8rem,3vw,2.8rem);position:relative;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent)}
-.event::before{content:'';position:absolute;inset:9px;border:1px solid var(--line-soft);pointer-events:none}
-.event h3{font-size:clamp(2.1rem,3.6vw,3rem);color:var(--gold);margin:.9rem 0 1.4rem}
-.event dl div{display:flex;justify-content:space-between;gap:1.2rem;padding:.85rem 0;border-top:1px solid var(--line-soft);font-size:.92rem}
-.event dt{color:var(--mute);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;padding-top:.15rem}
-.event dd{color:var(--white);text-align:right}
-.count{margin-top:1.2rem;padding-top:1.4rem;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:.9rem}
-.count b{font:600 3.2rem/1 var(--serif);color:var(--white)}
-.count span{font:400 .7rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
-.tl{list-style:none;counter-reset:t;border-left:1px solid var(--line);margin:0 0 3rem .6rem;max-width:860px}
-.tl li{position:relative;padding:0 0 2.4rem 2.6rem}
-.tl li::before{counter-increment:t;content:counter(t,upper-roman);position:absolute;left:-1px;top:-.15rem;transform:translateX(-50%);min-width:2.5rem;height:2.5rem;padding:0 .3rem;display:grid;place-items:center;background:var(--bg2);border:1px solid var(--gold);color:var(--gold);font:600 .95rem var(--serif);border-radius:50%}
-.tl h4{font-size:1.5rem;margin:0 0 .5rem}
-.tl p{font-size:.97rem}
-.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
-.roles div{background:var(--bg2);padding:1.7rem}
-.roles h4{font-size:1.3rem;color:var(--gold);margin-bottom:.5rem}
-.roles p{font-size:.9rem;margin:0}
-.songs{list-style:none;counter-reset:s;border-top:1px solid var(--line);max-width:860px}
-.songs li{display:grid;grid-template-columns:3.4rem 1fr;gap:1rem;padding:1.5rem 0;border-bottom:1px solid var(--line-soft)}
-.songs li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:500 1.15rem var(--serif);color:var(--gold);padding-top:.3rem}
-.songs h4{font-size:1.55rem;margin-bottom:.3rem}
-.songs p{font-size:.95rem;margin:0}
-.officers.wide dl{columns:2;column-gap:3rem}
-.officers.wide dl div{break-inside:avoid}
-@media (max-width:900px){.officers.wide dl{columns:1}}
-@media (max-width:560px){.event dl div{flex-direction:column;gap:.2rem}.event dd{text-align:left}}
-
-.note.pic{display:grid;grid-template-columns:1fr minmax(0,36%);gap:1.6rem;align-items:start}
-.note.pic img{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}
-.gal-title{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--gold);margin:3rem 0 1.4rem}
-.gal-title:first-of-type{margin-top:0}
-.g.p{aspect-ratio:1/1}
-.g.p::after{display:none}
-@media (max-width:700px){.note.pic{grid-template-columns:1fr}}
-
 /* Animacije */
 .rv{opacity:0;transform:translateY(18px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
 .rv.in{opacity:1;transform:none}
@@ -268,23 +253,25 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
 @media (max-width:900px){
   .hero-grid,.about,.feature,.barbara,.contact{grid-template-columns:1fr}
   .officers{position:static}
-  .steps,.pgrid,.cards{grid-template-columns:1fr}
-  .step+.step{border-left:0;border-top:1px solid var(--line-soft)}
-  .gal{grid-template-columns:1fr 1fr}
+  .pgrid,.cards,.album-grid{grid-template-columns:1fr}
   .strip .wrap{grid-template-columns:1fr 1fr}
   .strip div:nth-child(3){border-left:0}
   .strip div:nth-child(n+3){border-top:1px solid var(--line-soft)}
   figure::after{display:none}
   .barbara figure{max-width:420px}
+  .officers.wide dl{columns:1}
+  .note.pic{grid-template-columns:1fr}
 }
 @media (max-width:560px){
-  .gal{grid-template-columns:1fr}
   .brand small{display:none}
   .sec-head{grid-template-columns:1fr}
   .sec-head .no{grid-row:auto;padding:0}
-  .officers dl div{flex-direction:column;gap:.2rem}
-  .officers dd{text-align:left}
+  .event dl div,.officers dl div{flex-direction:column;gap:.2rem}
+  .event dd,.officers dd{text-align:left}
   .officers dt{max-width:none}
+  .lb-btn{width:40px;height:40px;font-size:1.4rem}
+  .lb-prev{left:6px}
+  .lb-next{right:6px}
 }
 </style>
 </head>
@@ -294,7 +281,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
 <header class="nav" id="nav">
   <div class="nav-in">
     <a href="#pocetna" class="brand" aria-label="Udruga SRETNO!, početna">
-      <img data-img src="images/udruga.png" alt="Amblem Udruge SRETNO!">
+      <img data-img src="images/udruga.png" alt="Amblem Udruge SRETNO!" decoding="async">
       <span><b>UDRUGA SRETNO!</b><small>TRADICIJA OD 1939.</small></span>
     </a>
     <nav aria-label="Glavni izbornik">
@@ -310,7 +297,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     </nav>
     <a href="https://www.rgn.unizg.hr" class="rgnf" target="_blank" rel="noopener noreferrer" aria-label="Rudarsko-geološko-naftni fakultet">
       <div><b>RGNF</b><small>SVEUČILIŠTE U ZAGREBU</small></div>
-      <img data-img src="images/rgnf.jpg" alt="Logotip RGNF-a">
+      <img data-img src="images/rgnf.jpg" alt="Logotip RGNF-a" decoding="async">
     </a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Izbornik</button>
   </div>
@@ -320,8 +307,8 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
 <section class="hero" id="pocetna">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow rv" style="--d:.1s">Zagreb &middot; 1939. &ndash; 2026.</div>
-      <h1 class="rv" style="--d:.25s">Skok preko kože<span>XXXVI. po redu</span></h1>
+      <div class="eyebrow rv" style="--d:.1s">Zagreb &middot; 1939. &ndash; <span id="heroYearSpan">2026.</span></div>
+      <h1 class="rv" style="--d:.25s">Skok preko kože<span id="heroEdition">XXXVI. po redu</span></h1>
       <div class="lead rv" style="--d:.4s">Svečano primanje studenata u časni rudarski ceh</div>
       <p class="desc rv" style="--d:.5s">Tradicionalni ceremonijal povodom Dana svete Barbare, zaštitnice rudara, geologa i naftaša. Svečano prima brucoše Rudarsko-geološko-naftnog fakulteta u časni rudarski stalež, a održava se svake dvije godine. Ova je godina godina Skoka.</p>
       <div class="actions rv" style="--d:.65s">
@@ -331,11 +318,11 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     </div>
     <aside class="event rv" style="--d:.5s">
       <span class="eyebrow">Sljedeći Skok</span>
-      <h3>5. prosinca 2026.</h3>
+      <h3 id="nextSkokDate">5. prosinca 2026.</h3>
       <dl>
         <div><dt>Početak</dt><dd>19:00</dd></div>
         <div><dt>Mjesto</dt><dd>Kristalna dvorana, Hotel Westin, Zagreb</dd></div>
-        <div><dt>Status</dt><dd>Pripreme su započele</dd></div>
+        <div><dt>Status</dt><dd>Pripreme u tijeku</dd></div>
       </dl>
       <div class="count"><b id="days">–</b><span>dana do Skoka</span></div>
     </aside>
@@ -369,7 +356,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
           <div><dt>Predsjednik Udruge</dt><dd>Filip Božić, mag. ing. petrol.</dd></div>
           <div><dt>Ritam Skoka</dt><dd>svake dvije godine</dd></div>
           <div><dt>Posljednji Skok</dt><dd>XXXV., 6. prosinca 2024.</dd></div>
-          <div><dt>Sljedeći Skok</dt><dd>XXXVI., 5. prosinca 2026.</dd></div>
+          <div><dt>Sljedeći Skok</dt><dd id="aboutNextSkok">XXXVI., 5. prosinca 2026.</dd></div>
         </dl>
         <div class="salute"><span>Drevni rudarski pozdrav</span><b>SRETNO!</b></div>
       </div>
@@ -382,7 +369,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     <div class="sec-head rv"><span class="no">02</span><span class="eyebrow">Ritual primanja novih rudara</span><h2>Skok preko kože</h2></div>
     <div class="feature">
       <figure class="rv">
-        <img data-img src="images/skok.jpeg" alt="Brucoš skače s bačve preko rudarske kože">
+        <img data-img src="images/skok.jpeg" alt="Brucoš skače s bačve preko rudarske kože" loading="lazy" decoding="async">
         <figcaption>Brucoš s bačve skače preko rudarske kože, izgovara svoje životno geslo i ispija kriglu piva pod budnim okom ispitivača.</figcaption>
       </figure>
       <div class="rv" style="--d:.15s">
@@ -447,16 +434,9 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     </div>
     <p class="rv" style="margin-top:1.6rem;max-width:760px">Prije skoka brucoš odgovara na tri pitanja: kako se zove, zašto je upisao RGNF i koji je njegov životni moto.</p>
 
-    <div class="protocol rv">
-      <h4>Oslovljavanje tijekom Skoka</h4>
-      <blockquote><strong>Brucoši govore</strong>„Slavni, časni, visoki i nepogrešivi Praesidiume, slavne časne tablice, slavni kontrariji i kontrarijske tablice, slavni Brucmajore!”</blockquote>
-      <blockquote><strong>Bajte govore</strong>„Slavni, časni, visoki i nepogrešivi Praesidiume, slavne časne tablice, slavni Contrapic Dexteru!”</blockquote>
-      <blockquote><strong>Časne tablice govore</strong>„Slavni, časni, visoki i nepogrešivi Praesidiume!”</blockquote>
-    </div>
-
     <div class="patrons rv">
       <h3>Pokrovitelji</h3>
-      <p>Kontinuitet i značaj Skoka potvrđuje podrška najviših državnih i gradskih institucija. Pokrovitelji XXXVI. Skoka bit će objavljeni naknadno. Pokrovitelji prethodnog, XXXV. Skoka održanog 6. prosinca 2024., bili su:</p>
+      <p>Kontinuitet i značaj Skoka potvrđuje podrška najviših državnih i gradskih institucija. Pokrovitelji nadolazećeg Skoka bit će objavljeni naknadno. Pokrovitelji prethodnog, XXXV. Skoka održanog 6. prosinca 2024., bili su:</p>
       <div class="pgrid">
         <div><small>Predsjednik Republike Hrvatske</small><b>Zoran Milanović</b><p>Pokroviteljstvo nad tradicionalnom rudarskom svečanošću.</p></div>
         <div><small>Gradonačelnik Grada Zagreba</small><b>Tomislav Tomašević</b><p>Pokroviteljstvo Grada Zagreba nad manifestacijom u Kristalnoj dvorani hotela Westin.</p></div>
@@ -509,7 +489,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   <div class="wrap">
     <div class="sec-head rv"><span class="no">04</span><span class="eyebrow">4. prosinca &middot; Rudarski blagdan</span><h2>Sveta Barbara</h2></div>
     <div class="barbara">
-      <figure class="rv"><img data-img src="images/sv-barbara.jpg" alt="Sveta Barbara, zaštitnica rudara"></figure>
+      <figure class="rv"><img data-img src="images/sv-barbara.jpg" alt="Sveta Barbara, zaštitnica rudara" loading="lazy" decoding="async"></figure>
       <div class="rv" style="--d:.15s">
         <h3>Legenda i štovanje</h3>
         <p>Rudarska tradicija neraskidivo je povezana sa svetom Barbarom, zaštitnicom rudara, a <strong>4. prosinca</strong> njihov je blagdan. Prema predaji, živjela je početkom 4. stoljeća u Nikomediji. Otac Dioskur zatvorio ju je u kulu, no ona je dala načiniti <strong>tri prozora</strong> kao simbol Presvetog Trojstva i tajno se krstila.</p>
@@ -522,10 +502,10 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
         <p>Njezine se relikvije čuvaju na više mjesta: prema zapadnim izvorima, oko 1000. godine prenesene su u baziliku svetog Marka u Veneciji, a u Hrvatskoj se u crkvi svetog Blaža u Vodnjanu, u Istri, među 370 posmrtnih ostataka od oko 250 svetaca nalazi i stopalo svete Barbare.</p>
         <div class="note pic"><div><h4>Rudnik sv. Barbare u Rudama</h4>
           <p>U Rudama kraj Samobora rudari su još u 16. stoljeću vadili bakar i željezo. Danas je ondje obnovljeni turistički rudnik sv. Barbare, zaštićeno kulturno dobro Republike Hrvatske, kojim upravlja KUD Oštrc. Svake godine 4. prosinca održava se večernja misa za sve pokojne rudare, nakon koje se procesija s kipom svete Barbare kreće od crkve do Rudnika, a ispred njega se izvode obredni plesovi, i to samo jednom godišnje, na blagdan zaštitnice rudara. Tom se manifestacijom Rudnik simbolički zatvara za posjetitelje do prvog dana proljeća. Priprema <em>Rudarske greblice</em>, tradicionalnog rudarskog kolača, nalazi se na popisu nematerijalne kulturne baštine. Članovi Udruge sudjelovali su u manifestaciji 2016. godine, predstavljajući dio Skoka preko kože. Više informacija: <a href="http://www.rudnik.hr" target="_blank" rel="noopener noreferrer">www.rudnik.hr</a>.</p>
-        </div><img data-img src="images/rudnik.jpg" alt="Rudnik sv. Barbare u Rudama" loading="lazy"></div>
+        </div><img data-img src="images/rudnik.jpg" alt="Rudnik sv. Barbare u Rudama" loading="lazy" decoding="async"></div>
         <div class="note pic"><div><h4>Svetišta svete Barbare</h4>
           <p>Najviše rimokatoličkih župa koje nose ime svete Barbare u Hrvatskoj nalazi se u Zagrebačkoj nadbiskupiji: Carevdar, Rude, Zagreb-Rebro, Zagreb-Vrapče i Velika Mlaka. U Velikoj Mlaki stoji kapela iz 1642., najreprezentativniji primjer baroknog drvenog sakralnog graditeljstva sjeverne Hrvatske, građena od turopoljske hrastovine. Njezin glavni krilni ranobarokni oltar s dvanaest prizora potječe iz 1679. godine.</p>
-        </div><img data-img src="images/crkva.jpg" alt="Crkva svete Barbare u Velikoj Mlaki" loading="lazy"></div>
+        </div><img data-img src="images/crkva.jpg" alt="Crkva svete Barbare u Velikoj Mlaki" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </div>
@@ -536,17 +516,17 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     <div class="sec-head rv"><span class="no">05</span><span class="eyebrow">Međunarodna suradnja i susreti</span><h2>Događanja i putovanja</h2></div>
     <div class="cards">
       <article class="card rv">
-        <div class="ph"><img data-img src="images/georudarijada.jpg" alt="Georudarijada, susret studenata rudarstva"></div>
+        <div class="ph"><img data-img src="images/georudarijada.jpg" alt="Georudarijada, susret studenata rudarstva" loading="lazy" decoding="async"></div>
         <div class="tx"><span class="eyebrow">Sport i edukacija</span><h3>Georudarijada</h3><div class="where">Sokobanja 2023. &middot; Trogir 2024.</div>
         <p>Sportsko-edukacijski susret studenata rudarstva, geologije i naftnog rudarstva iz regije. U Sokobanji je od 3. do 7. svibnja 2023. u hotelu Banjica sudjelovalo oko 200 studenata, a pobijedio je domaćin, Tehnički fakultet iz Bora. U Trogiru je od 24. do 28. travnja 2024. u Hotelu Medena okupljeno oko 300 studenata, a <strong>pobjedu je odnijela ekipa RGNF-a iz Zagreba</strong>, ujedno domaćin.</p></div>
       </article>
       <article class="card rv" style="--d:.12s">
-        <div class="ph"><img data-img src="images/slo.jpg" alt="Skok čez kožo u Ljubljani i Tuzli"></div>
+        <div class="ph"><img data-img src="images/slo.jpg" alt="Skok čez kožo u Ljubljani i Tuzli" loading="lazy" decoding="async"></div>
         <div class="tx"><span class="eyebrow">Međunarodni skokovi</span><h3>Ljubljana i Tuzla</h3><div class="where">Slovenija &middot; Bosna i Hercegovina</div>
         <p>U Ljubljani je Udruga sudjelovala na jubilarnoj 100. godišnjici Skoka čez kožo u Grand Hotelu Union, nakon što su brucoši Naravoslovnotehniške fakultete tražili Brucmajora po gradu. U Tuzli je 18. travnja 2024. održan 18. Skok preko kože, pod okriljem Rudarsko-geološko-građevinskog fakulteta, uz kolege iz Prijedora s Rudarskog fakulteta Univerziteta u Banjoj Luci.</p></div>
       </article>
       <article class="card rv" style="--d:.24s">
-        <div class="ph"><img data-img src="images/promocija.jpg" alt="Smotra studentskih udruga"></div>
+        <div class="ph"><img data-img src="images/promocija.jpg" alt="Smotra studentskih udruga" loading="lazy" decoding="async"></div>
         <div class="tx"><span class="eyebrow">Promocija baštine</span><h3>Smotra studentskih udruga</h3><div class="where">Studentski centar, Zagreb &middot; 20. svibnja 2024.</div>
         <p>Udruga je sudjelovala na prvoj Smotri studentskih udruga Sveučilišta u Zagrebu, održanoj u dvorištu Studentskog centra. Štand je privukao brojne studente, uključujući i one s našeg fakulteta koji prije nisu poznavali rad Udruge, te kolege s drugih fakulteta.</p></div>
       </article>
@@ -557,79 +537,69 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
 <section class="alt" id="galerija">
   <div class="wrap">
     <div class="sec-head rv"><span class="no">06</span><span class="eyebrow">Vizualni zapisi tradicije</span><h2>Galerija</h2></div>
-    <h3 class="gal-title rv">XXXV. Skok preko kože</h3>
-    <div class="gal">
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 1"><img data-img src="35%20skok/1.jpg" alt="XXXV. Skok preko kože, fotografija 1" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 2"><img data-img src="35%20skok/2.jpg" alt="XXXV. Skok preko kože, fotografija 2" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 3"><img data-img src="35%20skok/3.jpg" alt="XXXV. Skok preko kože, fotografija 3" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 4"><img data-img src="35%20skok/4.jpg" alt="XXXV. Skok preko kože, fotografija 4" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 5"><img data-img src="35%20skok/5.jpg" alt="XXXV. Skok preko kože, fotografija 5" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 6"><img data-img src="35%20skok/6.jpg" alt="XXXV. Skok preko kože, fotografija 6" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 7"><img data-img src="35%20skok/7.jpg" alt="XXXV. Skok preko kože, fotografija 7" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 8"><img data-img src="35%20skok/8.jpg" alt="XXXV. Skok preko kože, fotografija 8" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 9"><img data-img src="35%20skok/9.jpg" alt="XXXV. Skok preko kože, fotografija 9" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 10"><img data-img src="35%20skok/10.jpg" alt="XXXV. Skok preko kože, fotografija 10" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 11"><img data-img src="35%20skok/11.jpg" alt="XXXV. Skok preko kože, fotografija 11" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 12"><img data-img src="35%20skok/12.jpg" alt="XXXV. Skok preko kože, fotografija 12" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 13"><img data-img src="35%20skok/13.jpg" alt="XXXV. Skok preko kože, fotografija 13" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 14"><img data-img src="35%20skok/14.jpg" alt="XXXV. Skok preko kože, fotografija 14" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 15"><img data-img src="35%20skok/15.jpg" alt="XXXV. Skok preko kože, fotografija 15" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 16"><img data-img src="35%20skok/16.jpg" alt="XXXV. Skok preko kože, fotografija 16" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 17"><img data-img src="35%20skok/17.jpg" alt="XXXV. Skok preko kože, fotografija 17" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 18"><img data-img src="35%20skok/18.jpg" alt="XXXV. Skok preko kože, fotografija 18" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 19"><img data-img src="35%20skok/19.jpg" alt="XXXV. Skok preko kože, fotografija 19" loading="lazy"></button>
-      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 20"><img data-img src="35%20skok/20.jpg" alt="XXXV. Skok preko kože, fotografija 20" loading="lazy"></button>
-    </div>
-    <h3 class="gal-title rv">XXXIV. Skok preko kože</h3>
-    <div class="gal">
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 1"><img data-img src="34%20skok/1.jpg" alt="XXXIV. Skok preko kože, fotografija 1" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 2"><img data-img src="34%20skok/2.jpg" alt="XXXIV. Skok preko kože, fotografija 2" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 3"><img data-img src="34%20skok/3.jpg" alt="XXXIV. Skok preko kože, fotografija 3" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 4"><img data-img src="34%20skok/4.jpg" alt="XXXIV. Skok preko kože, fotografija 4" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 5"><img data-img src="34%20skok/5.jpg" alt="XXXIV. Skok preko kože, fotografija 5" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 6"><img data-img src="34%20skok/6.jpg" alt="XXXIV. Skok preko kože, fotografija 6" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 7"><img data-img src="34%20skok/7.jpg" alt="XXXIV. Skok preko kože, fotografija 7" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 8"><img data-img src="34%20skok/8.jpg" alt="XXXIV. Skok preko kože, fotografija 8" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 9"><img data-img src="34%20skok/9.jpg" alt="XXXIV. Skok preko kože, fotografija 9" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 10"><img data-img src="34%20skok/10.jpg" alt="XXXIV. Skok preko kože, fotografija 10" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 11"><img data-img src="34%20skok/11.jpg" alt="XXXIV. Skok preko kože, fotografija 11" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 12"><img data-img src="34%20skok/12.jpg" alt="XXXIV. Skok preko kože, fotografija 12" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 13"><img data-img src="34%20skok/13.jpg" alt="XXXIV. Skok preko kože, fotografija 13" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 14"><img data-img src="34%20skok/14.jpg" alt="XXXIV. Skok preko kože, fotografija 14" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 15"><img data-img src="34%20skok/15.jpg" alt="XXXIV. Skok preko kože, fotografija 15" loading="lazy"></button>
-    </div>
-    <h3 class="gal-title rv">XXXIII. Skok preko kože</h3>
-    <div class="gal">
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 1"><img data-img src="33%20skok/1.jpg" alt="XXXIII. Skok preko kože, fotografija 1" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 2"><img data-img src="33%20skok/2.jpg" alt="XXXIII. Skok preko kože, fotografija 2" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 3"><img data-img src="33%20skok/3.jpg" alt="XXXIII. Skok preko kože, fotografija 3" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 4"><img data-img src="33%20skok/4.jpg" alt="XXXIII. Skok preko kože, fotografija 4" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 5"><img data-img src="33%20skok/5.jpg" alt="XXXIII. Skok preko kože, fotografija 5" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 6"><img data-img src="33%20skok/6.jpg" alt="XXXIII. Skok preko kože, fotografija 6" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 7"><img data-img src="33%20skok/7.jpg" alt="XXXIII. Skok preko kože, fotografija 7" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 8"><img data-img src="33%20skok/8.jpg" alt="XXXIII. Skok preko kože, fotografija 8" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 9"><img data-img src="33%20skok/9.jpg" alt="XXXIII. Skok preko kože, fotografija 9" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 10"><img data-img src="33%20skok/10.jpg" alt="XXXIII. Skok preko kože, fotografija 10" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 11"><img data-img src="33%20skok/11.jpg" alt="XXXIII. Skok preko kože, fotografija 11" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 12"><img data-img src="33%20skok/12.jpg" alt="XXXIII. Skok preko kože, fotografija 12" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 13"><img data-img src="33%20skok/13.jpg" alt="XXXIII. Skok preko kože, fotografija 13" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 14"><img data-img src="33%20skok/14.jpg" alt="XXXIII. Skok preko kože, fotografija 14" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 15"><img data-img src="33%20skok/15.jpg" alt="XXXIII. Skok preko kože, fotografija 15" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 16"><img data-img src="33%20skok/16.jpg" alt="XXXIII. Skok preko kože, fotografija 16" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 17"><img data-img src="33%20skok/17.jpg" alt="XXXIII. Skok preko kože, fotografija 17" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 18"><img data-img src="33%20skok/18.jpg" alt="XXXIII. Skok preko kože, fotografija 18" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 19"><img data-img src="33%20skok/19.jpg" alt="XXXIII. Skok preko kože, fotografija 19" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 20"><img data-img src="33%20skok/20.jpg" alt="XXXIII. Skok preko kože, fotografija 20" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 21"><img data-img src="33%20skok/21.jpg" alt="XXXIII. Skok preko kože, fotografija 21" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 22"><img data-img src="33%20skok/22.jpg" alt="XXXIII. Skok preko kože, fotografija 22" loading="lazy"></button>
-      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 23"><img data-img src="33%20skok/23.jpg" alt="XXXIII. Skok preko kože, fotografija 23" loading="lazy"></button>
+    <div class="album-grid">
+      <!-- XXXV. Skok -->
+      <article class="album-card rv" onclick="openAlbum(35)">
+        <div class="album-cover">
+          <span class="album-badge">20 slika</span>
+          <img data-img src="35%20skok/1.jpg" alt="XXXV. Skok preko kože (2024.)" loading="lazy" decoding="async">
+        </div>
+        <div class="album-content">
+          <div>
+            <span class="eyebrow">Hotel Westin &middot; 2024.</span>
+            <h3>XXXV. Skok preko kože</h3>
+          </div>
+          <span class="action">Pregledaj album &rarr;</span>
+        </div>
+      </article>
+
+      <!-- XXXIV. Skok -->
+      <article class="album-card rv" style="--d:.12s" onclick="openAlbum(34)">
+        <div class="album-cover">
+          <span class="album-badge">15 slika</span>
+          <img data-img src="34%20skok/1.jpg" alt="XXXIV. Skok preko kože (2022.)" loading="lazy" decoding="async">
+        </div>
+        <div class="album-content">
+          <div>
+            <span class="eyebrow">Zagreb &middot; 2022.</span>
+            <h3>XXXIV. Skok preko kože</h3>
+          </div>
+          <span class="action">Pregledaj album &rarr;</span>
+        </div>
+      </article>
+
+      <!-- XXXIII. Skok -->
+      <article class="album-card rv" style="--d:.24s" onclick="openAlbum(33)">
+        <div class="album-cover">
+          <span class="album-badge">23 slike</span>
+          <img data-img src="33%20skok/1.jpg" alt="XXXIII. Skok preko kože (2018.)" loading="lazy" decoding="async">
+        </div>
+        <div class="album-content">
+          <div>
+            <span class="eyebrow">Zagreb &middot; 2018.</span>
+            <h3>XXXIII. Skok preko kože</h3>
+          </div>
+          <span class="action">Pregledaj album &rarr;</span>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<dialog id="lb" aria-label="Pregled fotografije">
-  <button class="close" id="lbClose">Zatvori</button>
-  <div class="lb"><img id="lbImg" alt=""><p id="lbCap"></p></div>
+<!-- Novi poboljšani Lightbox za listanje albuma -->
+<dialog id="lb" aria-label="Pregled galerije fotografija">
+  <button class="close-btn" id="lbClose">Zatvori (ESC)</button>
+  <div class="lb-box">
+    <div class="lb-viewport" id="lbViewport">
+      <button class="lb-btn lb-prev" id="lbPrev" aria-label="Prethodna fotografija">&#8249;</button>
+      <img id="lbImg" src="" alt="Fotografija sa Skoka preko kože" decoding="async">
+      <button class="lb-btn lb-next" id="lbNext" aria-label="Sljedeća fotografija">&#8250;</button>
+    </div>
+    <div class="lb-footer">
+      <p id="lbCap"></p>
+      <span class="lb-counter" id="lbCount"></span>
+    </div>
+  </div>
 </dialog>
 
 <section id="kontakt">
@@ -642,7 +612,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
         <div class="info">
           <div><small>E-pošta</small><a href="mailto:usretno@gmail.com">usretno@gmail.com</a><br><a href="mailto:sretno@rgn.hr">sretno@rgn.hr</a></div>
           <div><small>Društvene mreže</small><a href="https://www.instagram.com/udrugasretno" target="_blank" rel="noopener noreferrer">Instagram @udrugasretno</a><br><a href="https://www.facebook.com/search/top?q=Udruga%20Sretno!" target="_blank" rel="noopener noreferrer">Facebook Udruga Sretno!</a></div>
-          <div><small>Sljedeći Skok</small><span>XXXVI. Skok preko kože<br>5. prosinca 2026. u 19:00<br>Kristalna dvorana, Hotel Westin, Zagreb</span></div>
+          <div><small>Sljedeći Skok</small><span id="contactNextSkok">XXXVI. Skok preko kože<br>5. prosinca 2026. u 19:00<br>Kristalna dvorana, Hotel Westin, Zagreb</span></div>
           <div><small>Sjedište</small><span>Pierottijeva ulica 6 (RGN fakultet)<br>10 000 Zagreb, Hrvatska</span></div>
           <div><small>Predsjednik Udruge</small><span>Filip Božić, mag. ing. petrol.</span></div>
         </div>
@@ -665,9 +635,9 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
 <footer>
   <div class="wrap">
     <div class="f-row">
-      <img data-img src="images/udruga.png" alt="Amblem Udruge SRETNO!">
+      <img data-img src="images/udruga.png" alt="Amblem Udruge SRETNO!" decoding="async">
       <b>SRETNO!</b>
-      <img class="r" data-img src="images/rgnf.jpg" alt="Logotip RGNF-a">
+      <img class="r" data-img src="images/rgnf.jpg" alt="Logotip RGNF-a" decoding="async">
     </div>
     <div class="social">
       <a href="https://www.instagram.com/udrugasretno" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -675,7 +645,7 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
       <a href="mailto:usretno@gmail.com">E-pošta</a>
     </div>
     <small>Udruga „Sretno!” i Rudarsko-geološko-naftni fakultet Sveučilišta u Zagrebu</small>
-    <small style="margin-top:.5rem">&copy; 1939. &ndash; 2026. Tradicionalna rudarska manifestacija Skok preko kože. Sva prava pridržana.</small>
+    <small style="margin-top:.5rem">&copy; 1939. &ndash; <span id="footerYear">2026</span>. Tradicionalna rudarska manifestacija Skok preko kože. Sva prava pridržana.</small>
   </div>
 </footer>
 
@@ -706,27 +676,125 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   burger.onclick=()=>{const o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o);burger.textContent=o?'Zatvori':'Izbornik'};
   links.forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded',false);burger.textContent='Izbornik'}));
 
-  // Suptilno otkrivanje sadržaja pri skrolanju
+  // Animacija pri skrolanju
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   $$('.rv').forEach(el=>io.observe(el));
 
-  // Pregled fotografija
-  const lb=$('#lb'),lbImg=$('#lbImg'),lbCap=$('#lbCap');
-  $$('.g').forEach(g=>g.addEventListener('click',()=>{
-    const im=g.querySelector('img');lbImg.src=im.currentSrc||im.src;lbImg.alt=im.alt;lbCap.textContent=g.dataset.cap;lb.showModal();
-  }));
-  $('#lbClose').onclick=()=>lb.close();
-  lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('lb'))lb.close()});
+  // --- AUTOMATSKI DATUM I ODBROJAVANJE DO SKOKA ---
+  function toRoman(num) {
+    const map=[[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];
+    let res='';
+    for(const [val, roman] of map){while(num>=val){res+=roman;num-=val}}
+    return res;
+  }
 
-  // Odbrojavanje do Skoka (5. 12. 2026., 19:00 po zagrebačkom vremenu)
-  const dEl=$('#days');
-  if(dEl){const n=Math.ceil((Date.UTC(2026,11,5,18,0)-Date.now())/864e5);dEl.textContent=n>0?n:0}
+  function getClosestSundayToDec4(year){
+    const d4=new Date(year,11,4,19,0,0);
+    const day=d4.getDay(); // 0 je nedjelja
+    let diff = day<=3 ? -day : (7-day);
+    return new Date(year,11,4+diff,19,0,0);
+  }
 
-  // Obrazac otvara e-mail program s ispunjenom porukom
-  $('#form').addEventListener('submit',e=>{
+  function resolveNextSkok(){
+    const now=new Date();
+    const skok2026=new Date(2026,11,5,23,59,59);
+
+    if(now<=skok2026){
+      const target=new Date(2026,11,5,19,0,0);
+      return {
+        date: target,
+        dateStr: '5. prosinca 2026.',
+        roman: 'XXXVI',
+        year: 2026
+      };
+    }
+
+    // Za godine nakon 2026.: traži sljedeću parnu godinu i najbližu nedjelju 4.12.
+    let targetYear = now.getFullYear();
+    if(targetYear % 2 !== 0) targetYear++;
+    let target = getClosestSundayToDec4(targetYear);
+    if(now > target){
+      targetYear += 2;
+      target = getClosestSundayToDec4(targetYear);
+    }
+
+    const editionIndex = 36 + ((targetYear - 2026) / 2);
+    return {
+      date: target,
+      dateStr: `${target.getDate()}. prosinca ${target.getFullYear()}.`,
+      roman: toRoman(editionIndex),
+      year: targetYear
+    };
+  }
+
+  const skok = resolveNextSkok();
+  const daysDiff = Math.max(0, Math.ceil((skok.date.getTime() - Date.now()) / 864e5));
+
+  // Ažuriranje elemenata na stranici
+  if($('#days')) $('#days').textContent = daysDiff;
+  if($('#nextSkokDate')) $('#nextSkokDate').textContent = skok.dateStr;
+  if($('#heroYearSpan')) $('#heroYearSpan').textContent = skok.year + '.';
+  if($('#heroEdition')) $('#heroEdition').textContent = skok.roman + '. po redu';
+  if($('#aboutNextSkok')) $('#aboutNextSkok').textContent = `${skok.roman}., ${skok.dateStr}`;
+  if($('#footerYear')) $('#footerYear').textContent = skok.year;
+  if($('#contactNextSkok')) {
+    $('#contactNextSkok').innerHTML = `${skok.roman}. Skok preko kože<br>${skok.dateStr} u 19:00<br>Kristalna dvorana, Hotel Westin, Zagreb`;
+  }
+
+  // --- KOMPAKTNA GALERIJA I LIGHTBOX ---
+  const albums = {
+    35: { title: 'XXXV. Skok preko kože (2024.)', count: 20, folder: '35%20skok/' },
+    34: { title: 'XXXIV. Skok preko kože (2022.)', count: 15, folder: '34%20skok/' },
+    33: { title: 'XXXIII. Skok preko kože (2018.)', count: 23, folder: '33%20skok/' }
+  };
+
+  let curAlbum = null, curIdx = 1;
+  const lb = $('#lb'), lbImg = $('#lbImg'), lbCap = $('#lbCap'), lbCount = $('#lbCount');
+
+  function showImage(idx){
+    if(!curAlbum) return;
+    if(idx < 1) idx = curAlbum.count;
+    if(idx > curAlbum.count) idx = 1;
+    curIdx = idx;
+
+    lbImg.src = `${curAlbum.folder}${curIdx}.jpg`;
+    lbCap.textContent = `${curAlbum.title} — fotografija ${curIdx}`;
+    lbCount.textContent = `${curIdx} / ${curAlbum.count}`;
+  }
+
+  window.openAlbum = (id)=>{
+    curAlbum = albums[id];
+    showImage(1);
+    lb.showModal();
+  };
+
+  $('#lbPrev').onclick = (e)=>{ e.stopPropagation(); showImage(curIdx - 1); };
+  $('#lbNext').onclick = (e)=>{ e.stopPropagation(); showImage(curIdx + 1); };
+  $('#lbClose').onclick = ()=> lb.close();
+  lb.addEventListener('click', e => { if(e.target === lb) lb.close(); });
+
+  // Navigacija tipkovnicom
+  window.addEventListener('keydown', e=>{
+    if(!lb.open) return;
+    if(e.key === 'ArrowLeft') showImage(curIdx - 1);
+    if(e.key === 'ArrowRight') showImage(curIdx + 1);
+    if(e.key === 'Escape') lb.close();
+  });
+
+  // Swipe podrška za mobitele
+  let touchStartX = 0;
+  lb.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, {passive:true});
+  lb.addEventListener('touchend', e => {
+    const touchEndX = e.changedTouches[0].screenX;
+    if(touchStartX - touchEndX > 45) showImage(curIdx + 1);
+    if(touchEndX - touchStartX > 45) showImage(curIdx - 1);
+  }, {passive:true});
+
+  // Obrazac za kontakt
+  $('#form').addEventListener('submit', e=>{
     e.preventDefault();
     const n=$('#name').value.trim(),m=$('#email').value.trim(),s=$('#subject').value,t=$('#msg').value.trim();
-    const body=t+'\n\n'+n+'\n'+m;
+    const body=t+'\n\nPošiljatelj: '+n+'\nE-pošta: '+m;
     location.href='mailto:usretno@gmail.com?cc='+encodeURIComponent('sretno@rgn.hr')+'&subject='+encodeURIComponent('Upit: '+s)+'&body='+encodeURIComponent(body);
   });
 })();
