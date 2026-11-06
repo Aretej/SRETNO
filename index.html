@@ -241,6 +241,14 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
 @media (max-width:900px){.officers.wide dl{columns:1}}
 @media (max-width:560px){.event dl div{flex-direction:column;gap:.2rem}.event dd{text-align:left}}
 
+.note.pic{display:grid;grid-template-columns:1fr minmax(0,36%);gap:1.6rem;align-items:start}
+.note.pic img{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}
+.gal-title{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--gold);margin:3rem 0 1.4rem}
+.gal-title:first-of-type{margin-top:0}
+.g.p{aspect-ratio:1/1}
+.g.p::after{display:none}
+@media (max-width:700px){.note.pic{grid-template-columns:1fr}}
+
 /* Animacije */
 .rv{opacity:0;transform:translateY(18px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
 .rv.in{opacity:1;transform:none}
@@ -512,14 +520,12 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
         </ul>
         <p>Zbog nepokolebljive vjere pretrpjela je mučeništvo. Poginula je za svoju vjeru 306. godine, u 28. godini života, što je razlog zašto je časna rudarska uniforma ukrašena s 28 zlatnih gumbi. Predaja bilježi da je njezina oca potom pogodila munja s vedrog neba, pa se sveta Barbara zaziva protiv groma, požara i iznenadnih pogibelji u tami podzemlja.</p>
         <p>Njezine se relikvije čuvaju na više mjesta: prema zapadnim izvorima, oko 1000. godine prenesene su u baziliku svetog Marka u Veneciji, a u Hrvatskoj se u crkvi svetog Blaža u Vodnjanu, u Istri, među 370 posmrtnih ostataka od oko 250 svetaca nalazi i stopalo svete Barbare.</p>
-        <div class="note">
-          <h4>Rudnik sv. Barbare u Rudama</h4>
+        <div class="note pic"><div><h4>Rudnik sv. Barbare u Rudama</h4>
           <p>U Rudama kraj Samobora rudari su još u 16. stoljeću vadili bakar i željezo. Danas je ondje obnovljeni turistički rudnik sv. Barbare, zaštićeno kulturno dobro Republike Hrvatske, kojim upravlja KUD Oštrc. Svake godine 4. prosinca održava se večernja misa za sve pokojne rudare, nakon koje se procesija s kipom svete Barbare kreće od crkve do Rudnika, a ispred njega se izvode obredni plesovi, i to samo jednom godišnje, na blagdan zaštitnice rudara. Tom se manifestacijom Rudnik simbolički zatvara za posjetitelje do prvog dana proljeća. Priprema <em>Rudarske greblice</em>, tradicionalnog rudarskog kolača, nalazi se na popisu nematerijalne kulturne baštine. Članovi Udruge sudjelovali su u manifestaciji 2016. godine, predstavljajući dio Skoka preko kože. Više informacija: <a href="http://www.rudnik.hr" target="_blank" rel="noopener noreferrer">www.rudnik.hr</a>.</p>
-        </div>
-        <div class="note">
-          <h4>Svetišta svete Barbare</h4>
+        </div><img data-img src="images/rudnik.jpg" alt="Rudnik sv. Barbare u Rudama" loading="lazy"></div>
+        <div class="note pic"><div><h4>Svetišta svete Barbare</h4>
           <p>Najviše rimokatoličkih župa koje nose ime svete Barbare u Hrvatskoj nalazi se u Zagrebačkoj nadbiskupiji: Carevdar, Rude, Zagreb-Rebro, Zagreb-Vrapče i Velika Mlaka. U Velikoj Mlaki stoji kapela iz 1642., najreprezentativniji primjer baroknog drvenog sakralnog graditeljstva sjeverne Hrvatske, građena od turopoljske hrastovine. Njezin glavni krilni ranobarokni oltar s dvanaest prizora potječe iz 1679. godine.</p>
-        </div>
+        </div><img data-img src="images/crkva.jpg" alt="Crkva svete Barbare u Velikoj Mlaki" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -530,41 +536,93 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
     <div class="sec-head rv"><span class="no">05</span><span class="eyebrow">Međunarodna suradnja i susreti</span><h2>Događanja i putovanja</h2></div>
     <div class="cards">
       <article class="card rv">
-        <div class="ph"><img data-img src="images/dogadjaj1.jpeg" alt="Georudarijada, susret studenata rudarstva"></div>
+        <div class="ph"><img data-img src="images/georudarijada.jpg" alt="Georudarijada, susret studenata rudarstva"></div>
         <div class="tx"><span class="eyebrow">Sport i edukacija</span><h3>Georudarijada</h3><div class="where">Sokobanja 2023. &middot; Trogir 2024.</div>
         <p>Sportsko-edukacijski susret studenata rudarstva, geologije i naftnog rudarstva iz regije. U Sokobanji je od 3. do 7. svibnja 2023. u hotelu Banjica sudjelovalo oko 200 studenata, a pobijedio je domaćin, Tehnički fakultet iz Bora. U Trogiru je od 24. do 28. travnja 2024. u Hotelu Medena okupljeno oko 300 studenata, a <strong>pobjedu je odnijela ekipa RGNF-a iz Zagreba</strong>, ujedno domaćin.</p></div>
       </article>
       <article class="card rv" style="--d:.12s">
-        <div class="ph"><img data-img src="images/dogadjaj2.jpeg" alt="Skok čez kožo u Ljubljani i Tuzli"></div>
+        <div class="ph"><img data-img src="images/slo.jpg" alt="Skok čez kožo u Ljubljani i Tuzli"></div>
         <div class="tx"><span class="eyebrow">Međunarodni skokovi</span><h3>Ljubljana i Tuzla</h3><div class="where">Slovenija &middot; Bosna i Hercegovina</div>
         <p>U Ljubljani je Udruga sudjelovala na jubilarnoj 100. godišnjici Skoka čez kožo u Grand Hotelu Union, nakon što su brucoši Naravoslovnotehniške fakultete tražili Brucmajora po gradu. U Tuzli je 18. travnja 2024. održan 18. Skok preko kože, pod okriljem Rudarsko-geološko-građevinskog fakulteta, uz kolege iz Prijedora s Rudarskog fakulteta Univerziteta u Banjoj Luci.</p></div>
       </article>
       <article class="card rv" style="--d:.24s">
-        <div class="ph logo"><img data-img src="images/udruga.png" alt="Amblem Udruge"></div>
+        <div class="ph"><img data-img src="images/promocija.jpg" alt="Smotra studentskih udruga"></div>
         <div class="tx"><span class="eyebrow">Promocija baštine</span><h3>Smotra studentskih udruga</h3><div class="where">Studentski centar, Zagreb &middot; 20. svibnja 2024.</div>
         <p>Udruga je sudjelovala na prvoj Smotri studentskih udruga Sveučilišta u Zagrebu, održanoj u dvorištu Studentskog centra. Štand je privukao brojne studente, uključujući i one s našeg fakulteta koji prije nisu poznavali rad Udruge, te kolege s drugih fakulteta.</p></div>
       </article>
     </div>
-    <h3 class="sub rv" style="margin-bottom:1.4rem">Gostovanja Udruge</h3>
-    <ul class="symbols rv" style="max-width:760px;margin-inline:auto">
-      <li><b>2024.</b><span>Tuzla, Bosna i Hercegovina</span></li>
-      <li><b>2024.</b><span>Ljubljana, Slovenija</span></li>
-      <li><b>2025.</b><span>Ljubljana, Slovenija</span></li>
-      <li><b>2025.</b><span>Prijedor, Bosna i Hercegovina</span></li>
-    </ul>
   </div>
 </section>
 
 <section class="alt" id="galerija">
   <div class="wrap">
     <div class="sec-head rv"><span class="no">06</span><span class="eyebrow">Vizualni zapisi tradicije</span><h2>Galerija</h2></div>
+    <h3 class="gal-title rv">XXXV. Skok preko kože</h3>
     <div class="gal">
-      <button class="g rv" data-cap="Svečana dvorana: sudionici Skoka preko kože s kriglama i kacigama"><img data-img src="images/cover.jpeg" alt="Svečana dvorana"><span class="cap"><b>Svečani zbor</b><span>Sudionici, brucoši i časne tablice</span></span></button>
-      <button class="g rv" data-cap="Trenutak skoka preko kože: skok s bačve uz ispitivače" style="--d:.1s"><img data-img src="images/skok.jpeg" alt="Skok s bačve"><span class="cap"><b>Skok preko kože</b><span>Primanje brucoša u rudarski stalež</span></span></button>
-      <button class="g rv" data-cap="Sveta Barbara, zaštitnica rudara, s kulom, mačem i kaležom" style="--d:.2s"><img data-img src="images/sv-barbara.jpg" alt="Sveta Barbara"><span class="cap"><b>Sveta Barbara</b><span>Zaštitnica rudara i geologa</span></span></button>
-      <button class="g rv" data-cap="Georudarijada: sportsko-edukacijski susret studenata rudarstva"><img data-img src="images/dogadjaj1.jpeg" alt="Georudarijada"><span class="cap"><b>Georudarijada</b><span>Ekipa RGNF-a u sportu i znanju</span></span></button>
-      <button class="g rv" data-cap="Prijateljski posjeti i tradicijski susreti u Ljubljani i Tuzli" style="--d:.1s"><img data-img src="images/dogadjaj2.jpeg" alt="Događaj u regiji"><span class="cap"><b>Regionalna suradnja</b><span>Skokovi u susjednim zemljama</span></span></button>
-      <button class="g emblem rv" data-cap="Službeni amblem Udruge SRETNO!" style="--d:.2s"><img data-img src="images/udruga.png" alt="Amblem Udruge"><span class="cap"><b>Amblem Udruge</b><span>Rudarski kompas s ukrštenim čekićima</span></span></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 1"><img data-img src="35%20skok/1.jpg" alt="XXXV. Skok preko kože, fotografija 1" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 2"><img data-img src="35%20skok/2.jpg" alt="XXXV. Skok preko kože, fotografija 2" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 3"><img data-img src="35%20skok/3.jpg" alt="XXXV. Skok preko kože, fotografija 3" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 4"><img data-img src="35%20skok/4.jpg" alt="XXXV. Skok preko kože, fotografija 4" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 5"><img data-img src="35%20skok/5.jpg" alt="XXXV. Skok preko kože, fotografija 5" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 6"><img data-img src="35%20skok/6.jpg" alt="XXXV. Skok preko kože, fotografija 6" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 7"><img data-img src="35%20skok/7.jpg" alt="XXXV. Skok preko kože, fotografija 7" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 8"><img data-img src="35%20skok/8.jpg" alt="XXXV. Skok preko kože, fotografija 8" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 9"><img data-img src="35%20skok/9.jpg" alt="XXXV. Skok preko kože, fotografija 9" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 10"><img data-img src="35%20skok/10.jpg" alt="XXXV. Skok preko kože, fotografija 10" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 11"><img data-img src="35%20skok/11.jpg" alt="XXXV. Skok preko kože, fotografija 11" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 12"><img data-img src="35%20skok/12.jpg" alt="XXXV. Skok preko kože, fotografija 12" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 13"><img data-img src="35%20skok/13.jpg" alt="XXXV. Skok preko kože, fotografija 13" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 14"><img data-img src="35%20skok/14.jpg" alt="XXXV. Skok preko kože, fotografija 14" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 15"><img data-img src="35%20skok/15.jpg" alt="XXXV. Skok preko kože, fotografija 15" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 16"><img data-img src="35%20skok/16.jpg" alt="XXXV. Skok preko kože, fotografija 16" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 17"><img data-img src="35%20skok/17.jpg" alt="XXXV. Skok preko kože, fotografija 17" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 18"><img data-img src="35%20skok/18.jpg" alt="XXXV. Skok preko kože, fotografija 18" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 19"><img data-img src="35%20skok/19.jpg" alt="XXXV. Skok preko kože, fotografija 19" loading="lazy"></button>
+      <button class="g p" data-cap="XXXV. Skok preko kože, fotografija 20"><img data-img src="35%20skok/20.jpg" alt="XXXV. Skok preko kože, fotografija 20" loading="lazy"></button>
+    </div>
+    <h3 class="gal-title rv">XXXIV. Skok preko kože</h3>
+    <div class="gal">
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 1"><img data-img src="34%20skok/1.jpg" alt="XXXIV. Skok preko kože, fotografija 1" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 2"><img data-img src="34%20skok/2.jpg" alt="XXXIV. Skok preko kože, fotografija 2" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 3"><img data-img src="34%20skok/3.jpg" alt="XXXIV. Skok preko kože, fotografija 3" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 4"><img data-img src="34%20skok/4.jpg" alt="XXXIV. Skok preko kože, fotografija 4" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 5"><img data-img src="34%20skok/5.jpg" alt="XXXIV. Skok preko kože, fotografija 5" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 6"><img data-img src="34%20skok/6.jpg" alt="XXXIV. Skok preko kože, fotografija 6" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 7"><img data-img src="34%20skok/7.jpg" alt="XXXIV. Skok preko kože, fotografija 7" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 8"><img data-img src="34%20skok/8.jpg" alt="XXXIV. Skok preko kože, fotografija 8" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 9"><img data-img src="34%20skok/9.jpg" alt="XXXIV. Skok preko kože, fotografija 9" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 10"><img data-img src="34%20skok/10.jpg" alt="XXXIV. Skok preko kože, fotografija 10" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 11"><img data-img src="34%20skok/11.jpg" alt="XXXIV. Skok preko kože, fotografija 11" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 12"><img data-img src="34%20skok/12.jpg" alt="XXXIV. Skok preko kože, fotografija 12" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 13"><img data-img src="34%20skok/13.jpg" alt="XXXIV. Skok preko kože, fotografija 13" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 14"><img data-img src="34%20skok/14.jpg" alt="XXXIV. Skok preko kože, fotografija 14" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIV. Skok preko kože, fotografija 15"><img data-img src="34%20skok/15.jpg" alt="XXXIV. Skok preko kože, fotografija 15" loading="lazy"></button>
+    </div>
+    <h3 class="gal-title rv">XXXIII. Skok preko kože</h3>
+    <div class="gal">
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 1"><img data-img src="33%20skok/1.jpg" alt="XXXIII. Skok preko kože, fotografija 1" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 2"><img data-img src="33%20skok/2.jpg" alt="XXXIII. Skok preko kože, fotografija 2" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 3"><img data-img src="33%20skok/3.jpg" alt="XXXIII. Skok preko kože, fotografija 3" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 4"><img data-img src="33%20skok/4.jpg" alt="XXXIII. Skok preko kože, fotografija 4" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 5"><img data-img src="33%20skok/5.jpg" alt="XXXIII. Skok preko kože, fotografija 5" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 6"><img data-img src="33%20skok/6.jpg" alt="XXXIII. Skok preko kože, fotografija 6" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 7"><img data-img src="33%20skok/7.jpg" alt="XXXIII. Skok preko kože, fotografija 7" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 8"><img data-img src="33%20skok/8.jpg" alt="XXXIII. Skok preko kože, fotografija 8" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 9"><img data-img src="33%20skok/9.jpg" alt="XXXIII. Skok preko kože, fotografija 9" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 10"><img data-img src="33%20skok/10.jpg" alt="XXXIII. Skok preko kože, fotografija 10" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 11"><img data-img src="33%20skok/11.jpg" alt="XXXIII. Skok preko kože, fotografija 11" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 12"><img data-img src="33%20skok/12.jpg" alt="XXXIII. Skok preko kože, fotografija 12" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 13"><img data-img src="33%20skok/13.jpg" alt="XXXIII. Skok preko kože, fotografija 13" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 14"><img data-img src="33%20skok/14.jpg" alt="XXXIII. Skok preko kože, fotografija 14" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 15"><img data-img src="33%20skok/15.jpg" alt="XXXIII. Skok preko kože, fotografija 15" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 16"><img data-img src="33%20skok/16.jpg" alt="XXXIII. Skok preko kože, fotografija 16" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 17"><img data-img src="33%20skok/17.jpg" alt="XXXIII. Skok preko kože, fotografija 17" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 18"><img data-img src="33%20skok/18.jpg" alt="XXXIII. Skok preko kože, fotografija 18" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 19"><img data-img src="33%20skok/19.jpg" alt="XXXIII. Skok preko kože, fotografija 19" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 20"><img data-img src="33%20skok/20.jpg" alt="XXXIII. Skok preko kože, fotografija 20" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 21"><img data-img src="33%20skok/21.jpg" alt="XXXIII. Skok preko kože, fotografija 21" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 22"><img data-img src="33%20skok/22.jpg" alt="XXXIII. Skok preko kože, fotografija 22" loading="lazy"></button>
+      <button class="g p" data-cap="XXXIII. Skok preko kože, fotografija 23"><img data-img src="33%20skok/23.jpg" alt="XXXIII. Skok preko kože, fotografija 23" loading="lazy"></button>
     </div>
   </div>
 </section>
@@ -625,10 +683,11 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
 (()=>{
   const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 
-  // Rezervni put za slike: images/ pa isti direktorij, inače sakrij
+  // Rezervni put za slike: probaj i s "images/" i bez njega, inače sakrij
   $$('img[data-img]').forEach(i=>{
     i.addEventListener('error',()=>{
-      if(!i.dataset.t){i.dataset.t=1;i.src=i.getAttribute('src').replace('images/','')}
+      const s=i.getAttribute('src');
+      if(!i.dataset.t){i.dataset.t=1;i.src=s.startsWith('images/')?s.slice(7):'images/'+s}
       else i.classList.add('missing');
     });
   });
