@@ -133,7 +133,12 @@ section{padding:clamp(5rem,10vw,8.5rem) 0;position:relative}
 .banner-fig::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,9,10,.7) 0%,transparent 35%);pointer-events:none}
 .banner-fig img{width:100%;height:clamp(240px,34vw,420px);object-fit:cover;object-position:center;transition:transform 1.2s var(--ease)}
 .banner-fig:hover img{transform:scale(1.025)}
-.banner-fig.natural img{height:auto;object-fit:initial}
+/* Panoramske fotografije u izvornom omjeru (pejzaž), bez rezanja, zatamnjenja i preklapanja natpisa */
+.banner-fig.natural{border:0;background:none;overflow:visible}
+.banner-fig.natural::after{display:none}
+.banner-fig.natural img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border:1px solid var(--line);background:var(--bg3);filter:none;transform:none}
+.banner-fig.natural:hover img{transform:none}
+.banner-fig.natural figcaption{position:static;margin-top:1rem;padding:.1rem 0 .1rem 1rem;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border-left:1px solid var(--gold);font-size:.88rem;line-height:1.5;color:var(--gold-soft)}
 .banner-fig figcaption{position:absolute;left:1.5rem;bottom:1.2rem;font-size:.82rem;color:var(--gold-soft);letter-spacing:.05em;z-index:2;background:rgba(8,9,10,.82);padding:.4rem .9rem;border-left:1px solid var(--gold);backdrop-filter:blur(6px)}
 
 /* O nama */
@@ -337,6 +342,57 @@ footer small{display:block;font-size:.76rem;color:var(--mute);letter-spacing:.04
   .strip div{padding:1.6rem 0.6rem}
   .strip b{font-size:1.25rem}
   .strip span{font-size:.64rem}
+}
+
+/* Mobilni prikaz: čitljivost i razmaci */
+@media (max-width:560px){
+  body{font-size:1rem;line-height:1.7}
+  section{padding:4rem 0}
+  .nav-in{height:72px;gap:.8rem;width:calc(100% - 2rem)}
+  .menu{inset:72px 0 auto 0}
+  .brand{gap:.65rem;min-width:0}
+  .brand img{width:40px;height:40px}
+  .brand b{font-size:.95rem;letter-spacing:.1em;white-space:nowrap}
+  .rgnf img{width:34px;height:34px}
+  .burger{padding:.55rem .8rem;font-size:.62rem;letter-spacing:.14em}
+  html{scroll-padding-top:72px}
+  .hero{padding:6.5rem 0 2.5rem;min-height:auto}
+  .hero h1{font-size:clamp(2.5rem,12.5vw,3.2rem)}
+  .hero p.desc{font-size:1rem}
+  .actions{gap:.7rem}
+  .btn{padding:.95rem 1.5rem;flex:1 1 auto;text-align:center}
+  .sec-head{margin-bottom:2rem;padding-bottom:1.1rem}
+  .sec-head h2{font-size:clamp(2rem,9.5vw,2.5rem)}
+  .sub{margin:3rem 0 1.8rem;font-size:1.65rem}
+  .banner-photo{margin:1.6rem 0}
+  .banner-fig.natural figcaption{font-size:.84rem}
+  .strip-next{padding-bottom:2rem}
+  .strip-next .wrap>div{grid-template-columns:1fr;row-gap:.2rem;justify-items:center;text-align:center;padding:1.3rem .6rem}
+  .strip-next .ic{grid-row:auto;width:38px;height:38px;margin-bottom:.4rem}
+  .strip-next .ic svg{width:18px;height:18px}
+  .strip-next .wrap>div>b{font-size:1.2rem;align-self:auto;line-height:1.2}
+  .strip-next .wrap>div>span{font-size:.6rem;letter-spacing:.14em;align-self:auto;margin-top:.1rem}
+  .strip-next .cd>b{justify-content:center;gap:.4rem}
+  .strip-next .cd>b #days{font-size:2.2rem}
+  .strip-next .cd>b small{font-size:.7rem}
+  .strip-inline{margin:2.2rem 0}
+  .about article{padding:1.5rem 0}
+  .officers,.patrons,.note,form{padding:1.4rem}
+  .salute b{font-size:2.1rem;letter-spacing:.16em;padding-left:.16em}
+  .roles div{padding:1.4rem}
+  .songs li{grid-template-columns:2.4rem 1fr;gap:.7rem;padding:1.2rem 0}
+  .songs h4{font-size:1.35rem}
+  .tl{margin-left:.5rem}
+  .tl li{padding:0 0 2rem 2rem}
+  .tl li::before{min-width:2.1rem;height:2.1rem;font-size:.85rem}
+  .tl h4{font-size:1.3rem}
+  .card .tx{padding:1.4rem}
+  .symbols li{gap:.8rem}
+  .f-row{gap:1rem}
+  .f-row b{font-size:1.3rem;letter-spacing:.22em}
+  .social{flex-wrap:wrap;gap:1rem 1.6rem}
+  .close-btn{top:.8rem;right:.8rem;padding:.6rem .9rem}
+  .lb-footer{flex-direction:column;gap:.4rem;align-items:flex-start}
 }
 </style>
 </head>
